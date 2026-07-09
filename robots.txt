@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rajib4438.github.io/sitemap.xml
+Sitemap: https://rajibkhan.aio.bd/sitemap.xml
