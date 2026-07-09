@@ -424,7 +424,7 @@ function renderHome() {
         </div>
         <aside class="hero-aside reveal">
           <div class="profile-frame">
-            <img src="assets/Khan.webp" alt="Rajib Khan profile visual">
+            <img src="assets/rk-og.webp" alt="Rajib Khan profile visual">
           </div>
           <div class="stat-grid" aria-label="Portfolio highlights">
             <div class="stat-tile">
