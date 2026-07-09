@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://127.0.0.1:8917/sitemap.xml
+Sitemap: https://rajib4438.github.io/sitemap.xml
