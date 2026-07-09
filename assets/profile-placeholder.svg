@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Rajib Khan profile placeholder</title>
+  <desc id="desc">A clean academic profile placeholder with initials RK and research-themed geometric details.</desc>
+  <style>
+    .profile-wave {
+      stroke-dasharray: 92 44;
+      animation: wave-flow 3.2s linear infinite;
+    }
+    .profile-wave.alt {
+      animation-duration: 3.8s;
+      animation-direction: reverse;
+    }
+    @keyframes wave-flow {
+      to {
+        stroke-dashoffset: -272;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .profile-wave {
+        animation: none;
+      }
+    }
+  </style>
+  <rect width="900" height="1100" fill="#f8faf7"/>
+  <rect x="72" y="72" width="756" height="956" rx="28" fill="#ffffff" stroke="#d8dfd8" stroke-width="2"/>
+  <circle cx="450" cy="350" r="168" fill="#0f766e"/>
+  <circle cx="450" cy="350" r="126" fill="#dff4ee"/>
+  <text x="450" y="386" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="112" font-weight="700" fill="#16312d">RK</text>
+  <path class="profile-wave" d="M240 698 C320 620 392 646 460 694 C532 746 612 764 704 674" fill="none" stroke="#2563eb" stroke-width="18" stroke-linecap="round"/>
+  <path class="profile-wave alt" d="M240 766 C328 728 392 750 460 806 C532 864 620 872 704 798" fill="none" stroke="#d97706" stroke-width="18" stroke-linecap="round"/>
+  <g fill="#16312d">
+    <circle cx="242" cy="698" r="14"/>
+    <circle cx="460" cy="694" r="14"/>
+    <circle cx="704" cy="674" r="14"/>
+    <circle cx="240" cy="766" r="14"/>
+    <circle cx="460" cy="806" r="14"/>
+    <circle cx="704" cy="798" r="14"/>
+  </g>
+  <text x="450" y="908" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" fill="#1b1f23">Rajib Khan</text>
+  <text x="450" y="968" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#5f6872">NLP Researcher and CSE Graduate</text>
+</svg>
