@@ -9,9 +9,10 @@ const profile = {
   linkedin: "https://www.linkedin.com/in/rajib-khan-b924a1420",
   github: "https://github.com/Rajib4438",
   scholar: "https://scholar.google.com/citations?user=JC4pI4QAAAAJ&hl=en",
+  orcid: "https://orcid.org/0009-0002-6688-8818",
   cv: "MY_CV.docx.pdf",
   summary:
-    "I am a Computer Science and Engineering graduate from IUBAT and an undergraduate researcher focused on low-resource NLP for Bengali and Banglish language technologies. My work combines dataset construction, transformer architectures, supervised contrastive learning, sentiment analysis, and interpretability to build more useful AI systems for local language contexts.",
+    "IUBAT CSE graduate and researcher building practical NLP tools for Bengali and Banglish language communities.",
   interests: [
     "Low-resource NLP",
     "Bengali and Banglish text",
@@ -49,6 +50,18 @@ const education = [
       "Completed coursework in software engineering, database management systems, data structures and algorithms, system analysis and design, and management information systems."
     ],
     tags: ["Software Engineering", "DBMS", "Data Structures", "Algorithms", "System Analysis"]
+  },
+  {
+    degree: "Higher Secondary Certificate (HSC)",
+    institution: "Rajbari Government College",
+    location: "Rajbari, Bangladesh",
+    meta: "GPA: 4.50/5.00"
+  },
+  {
+    degree: "Secondary School Certificate (SSC)",
+    institution: "Goalanda Nazir Uddin Pilot Government High School",
+    location: "Goalanda, Rajbari, Bangladesh",
+    meta: "GPA: 4.11/5.00"
   }
 ];
 
@@ -376,7 +389,7 @@ function sectionHeading(title, text) {
   return `
     <div class="section-heading reveal">
       <h2>${escapeHtml(title)}</h2>
-      <p>${escapeHtml(text)}</p>
+      ${text ? `<p>${escapeHtml(text)}</p>` : ""}
     </div>
   `;
 }
@@ -404,16 +417,28 @@ function renderNav() {
 function renderHome() {
   const featuredPublications = publications.slice(0, 3);
   return `
-    <section class="home-hero">
+    <section class="arrival-hero" aria-labelledby="arrival-name">
+      <div class="arrival-hero-image" aria-hidden="true"></div>
+      <div class="arrival-hero-overlay" aria-hidden="true"></div>
+      <div class="container arrival-hero-content">
+        <p class="arrival-kicker">Academic Portfolio</p>
+        <h1 id="arrival-name">${escapeHtml(profile.name)}</h1>
+        <p>${escapeHtml(profile.title)}</p>
+        <a class="arrival-scroll" href="#about-me" aria-label="Scroll to learn more about Rajib Khan">
+          <span>Discover my work</span>
+          <span aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="home-hero" id="about-me" aria-labelledby="about-me-title">
       <div class="container home-hero-grid">
         <div class="hero-copy reveal">
-          <div class="hero-kicker">Academic Portfolio</div>
-          <h1 class="hero-title">${escapeHtml(profile.name)}</h1>
+          <div class="hero-kicker">About me</div>
+          <h2 class="hero-title" id="about-me-title">About Me</h2>
           <p class="hero-role">${escapeHtml(profile.title)} | ${escapeHtml(profile.affiliation)}</p>
           <p class="hero-lede">${escapeHtml(profile.summary)}</p>
           <div class="hero-actions">
-            ${linkButton("Download CV", profile.cv, "primary", "download", "download")}
-            ${linkButton("View CV Online", profile.cv, "ghost", "file-text", 'target="_blank" rel="noreferrer"')}
             ${linkButton("Google Scholar", profile.scholar, "ghost", "external-link", 'target="_blank" rel="noreferrer"')}
           </div>
           <div class="hero-meta">
@@ -424,7 +449,7 @@ function renderHome() {
         </div>
         <aside class="hero-aside reveal">
           <div class="profile-frame">
-            <img src="assets/rk-og.webp" alt="Rajib Khan profile visual">
+            <img src="assets/Khan.webp" alt="Headshot of Rajib Khan">
           </div>
           <div class="stat-grid" aria-label="Portfolio highlights">
             <div class="stat-tile">
@@ -481,27 +506,12 @@ function renderHome() {
         <div class="publication-list">
           ${featuredPublications.map((pub) => publicationItem(pub)).join("")}
         </div>
-      </div>
-    </section>
-
-    <section class="section-band">
-      <div class="container">
-        <div class="cv-panel reveal">
-          <div>
-            <p class="eyebrow">CV</p>
-            <h2>Need the formal academic record?</h2>
-            <p>Use the CV for a complete view of education, publications, presentations, skills, and references. The website keeps the same information easier to scan for collaborators, reviewers, and recruiters.</p>
-            <div class="hero-actions">
-              ${linkButton("Download CV", profile.cv, "primary", "download", "download")}
-              ${linkButton("View Online", profile.cv, "ghost", "file-text", 'target="_blank" rel="noreferrer"')}
-            </div>
-          </div>
-          <a class="cv-preview" href="${profile.cv}" target="_blank" rel="noreferrer" aria-label="Open Rajib Khan CV">
-            <img src="assets/cv-preview.png" alt="Preview of Rajib Khan CV">
-          </a>
+        <div class="hero-actions publication-actions reveal">
+          ${linkButton("View all publications", "publications.html", "primary", "book")}
         </div>
       </div>
     </section>
+
   `;
 }
 
@@ -519,11 +529,6 @@ function researchDescription(interest) {
 
 function renderEducation() {
   return `
-    ${pageHero(
-      "Education",
-      "Academic training in computer science, data, and intelligent systems.",
-      "Rajib's academic foundation combines core computer science coursework with a thesis direction in Bengali contextual question classification."
-    )}
     <section class="section-band">
       <div class="container">
         <div class="timeline">
@@ -536,15 +541,13 @@ function renderEducation() {
                       <h2>${escapeHtml(item.degree)}</h2>
                       <p class="timeline-meta">${escapeHtml(item.institution)} | ${escapeHtml(item.location)}</p>
                     </div>
-                    <span class="timeline-date">${escapeHtml(item.date)}</span>
+                    ${item.date ? `<span class="timeline-date">${escapeHtml(item.date)}</span>` : ""}
                   </div>
                   <p><strong>${escapeHtml(item.meta)}</strong></p>
-                  <p><strong>Thesis:</strong> ${escapeHtml(item.thesis)}</p>
-                  <p><strong>Advisor:</strong> ${escapeHtml(item.advisor)}</p>
-                  <ul class="clean-list">
-                    ${item.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}
-                  </ul>
-                  ${tags(item.tags)}
+                  ${item.thesis ? `<p><strong>Thesis:</strong> ${escapeHtml(item.thesis)}</p>` : ""}
+                  ${item.advisor ? `<p><strong>Advisor:</strong> ${escapeHtml(item.advisor)}</p>` : ""}
+                  ${item.details ? `<ul class="clean-list">${item.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}</ul>` : ""}
+                  ${item.tags ? tags(item.tags) : ""}
                 </article>
               `
             )
@@ -557,14 +560,9 @@ function renderEducation() {
 
 function renderExperience() {
   return `
-    ${pageHero(
-      "Professional Experience",
-      "Research, engineering, and student leadership with practical outcomes.",
-      "The experience page separates Rajib's research contributions, software engineering internship, and service roles so visitors can scan both technical depth and collaboration history."
-    )}
     <section class="section-band">
       <div class="container">
-        ${sectionHeading("Research and Engineering", "Roles connected to published work, dataset development, and production-style software systems.")}
+        ${sectionHeading("Research and Engineering", "")}
         <div class="timeline">
           ${experiences.map((item) => experienceItem(item)).join("")}
         </div>
@@ -572,7 +570,7 @@ function renderExperience() {
     </section>
     <section class="section-band alt">
       <div class="container">
-        ${sectionHeading("Service and Leadership", "Student community roles that show organization, communication, and academic engagement.")}
+        ${sectionHeading("Service and Leadership", "")}
         <div class="timeline">
           ${leadership.map((item) => experienceItem(item)).join("")}
         </div>
@@ -603,11 +601,6 @@ function experienceItem(item) {
 function renderPublications() {
   const filters = ["All", ...Array.from(new Set(publications.map((pub) => pub.type)))];
   return `
-    ${pageHero(
-      "Publications",
-      "Research outputs across Bengali NLP, Banglish sentiment analysis, and interpretable machine learning.",
-      "This page is structured for academic readers: title, authors, venue, year, and a short contribution note for fast scanning."
-    )}
     <section class="section-band">
       <div class="container">
         <div class="toolbar reveal">
@@ -695,11 +688,6 @@ function bindPublicationFilters() {
 function renderProjects() {
   const filters = ["All", ...Array.from(new Set(projects.map((project) => project.type)))];
   return `
-    ${pageHero(
-      "Projects",
-      "Selected research and software projects with clear methods and outcomes.",
-      "Each project is written as a portfolio case summary: the problem, approach, tools, and contribution are made visible without overwhelming readers."
-    )}
     <section class="section-band">
       <div class="container">
         <div class="toolbar reveal">
@@ -784,11 +772,6 @@ function bindProjectFilters() {
 
 function renderAwards() {
   return `
-    ${pageHero(
-      "Awards",
-      "Recognition in programming, problem solving, and debate.",
-      "The awards page is intentionally compact so distinctions support the portfolio without competing with the research story."
-    )}
     <section class="section-band">
       <div class="container">
         <div class="award-grid">
@@ -813,11 +796,6 @@ function renderAwards() {
 
 function renderPresentations() {
   return `
-    ${pageHero(
-      "Presentations",
-      "Conference talks and posters for research communication.",
-      "These entries highlight where Rajib has shared research findings with academic audiences."
-    )}
     <section class="section-band">
       <div class="container">
         <div class="timeline">
@@ -845,11 +823,6 @@ function renderPresentations() {
 
 function renderSkills() {
   return `
-    ${pageHero(
-      "Skills",
-      "Technical toolkit for NLP research, data analysis, and software engineering.",
-      "The skills page groups tools by how they are used: programming, model development, web engineering, research analysis, and language communication."
-    )}
     <section class="section-band">
       <div class="container skills-layout">
         <div class="skill-grid">
@@ -912,11 +885,6 @@ function renderContact() {
   ];
 
   return `
-    ${pageHero(
-      "Contact",
-      "Open to research collaboration, software projects, and academic opportunities.",
-      "For the fastest response, use email. References are available in the full CV."
-    )}
     <section class="section-band">
       <div class="container">
         <div class="contact-grid">
@@ -966,11 +934,15 @@ function renderFooter() {
         <p class="footer-meta">${escapeHtml(profile.title)} | ${escapeHtml(profile.location)}</p>
         <p class="footer-meta">&copy; <span id="year"></span> ${escapeHtml(profile.name)}. Built as a clean academic portfolio.</p>
       </div>
-      <div class="footer-links">
-        <a class="social-link" href="mailto:${escapeHtml(profile.email)}" aria-label="Email">${icon("mail")}<span class="footer-link-label">Email</span></a>
-        <a class="social-link" href="${escapeHtml(profile.linkedin)}" target="_blank" rel="noreferrer" aria-label="LinkedIn">${icon("linkedin")}<span class="footer-link-label">LinkedIn</span></a>
-        <a class="social-link" href="${escapeHtml(profile.github)}" target="_blank" rel="noreferrer" aria-label="GitHub">${icon("github")}<span class="footer-link-label">GitHub</span></a>
-        <a class="social-link" href="${escapeHtml(profile.scholar)}" target="_blank" rel="noreferrer" aria-label="Google Scholar">${icon("external-link")}<span class="footer-link-label">Scholar</span></a>
+      <div class="footer-connect">
+        <p class="footer-connect-label">Connect and explore</p>
+        <div class="footer-links">
+          <a class="social-link" href="mailto:${escapeHtml(profile.email)}" aria-label="Email">${icon("mail")}<span class="footer-link-label">Email</span></a>
+          <a class="social-link" href="${escapeHtml(profile.linkedin)}" target="_blank" rel="noreferrer" aria-label="LinkedIn">${icon("linkedin")}<span class="footer-link-label">LinkedIn</span></a>
+          <a class="social-link" href="${escapeHtml(profile.github)}" target="_blank" rel="noreferrer" aria-label="GitHub">${icon("github")}<span class="footer-link-label">GitHub</span></a>
+          <a class="social-link" href="${escapeHtml(profile.scholar)}" target="_blank" rel="noreferrer" aria-label="Google Scholar">${icon("external-link")}<span class="footer-link-label">Scholar</span></a>
+          <a class="social-link orcid-link" href="${escapeHtml(profile.orcid)}" target="_blank" rel="noreferrer" aria-label="ORCID profile"><span class="orcid-mark" aria-hidden="true">iD</span><span class="footer-link-label">ORCID</span></a>
+        </div>
       </div>
       <!-- Developer attribution: kawshik.dev -->
       <p class="developer-credit footer-credit-final">Developed by <a href="https://kawshik.dev" target="_blank" rel="noreferrer">kawshik.dev</a></p>
@@ -984,6 +956,20 @@ function renderIcons() {
   document.querySelectorAll("[data-icon]").forEach((target) => {
     target.innerHTML = icon(target.dataset.icon);
   });
+}
+
+function pageImageHeader(page) {
+  const labels = {
+    education: "Education",
+    experience: "Professional experience",
+    publications: "Publications",
+    projects: "Projects",
+    awards: "Awards",
+    presentations: "Presentations",
+    skills: "Skills",
+    contact: "Contact"
+  };
+  return `<div class="section-image-header section-image-header--${escapeHtml(page)}" role="img" aria-label="${escapeHtml(labels[page] || "Portfolio")} header image"></div>`;
 }
 
 function renderPage() {
@@ -1000,7 +986,8 @@ function renderPage() {
     skills: renderSkills,
     contact: renderContact
   };
-  main.innerHTML = (renderers[page] || renderHome)();
+  const pageContent = (renderers[page] || renderHome)();
+  main.innerHTML = page === "home" ? pageContent : `${pageImageHeader(page)}${pageContent}`;
   if (page === "publications") bindPublicationFilters();
   if (page === "projects") bindProjectFilters();
   bindCopyEmail();

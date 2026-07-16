@@ -99,9 +99,11 @@ input {
   top: 0;
   z-index: 50;
   min-height: var(--header-height);
-  border-bottom: 1px solid color-mix(in srgb, var(--line) 82%, transparent);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
-  backdrop-filter: blur(18px);
+  border-bottom: 1px solid color-mix(in srgb, var(--surface) 66%, transparent);
+  background: color-mix(in srgb, var(--bg) 68%, transparent);
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--ink) 8%, transparent);
+  backdrop-filter: blur(20px) saturate(1.25);
+  -webkit-backdrop-filter: blur(20px) saturate(1.25);
 }
 
 .header-inner {
@@ -293,8 +295,109 @@ input {
   font-size: clamp(1.03rem, 1.5vw, 1.22rem);
 }
 
+.section-image-header {
+  height: min(30svh, 300px);
+  border-bottom: 1px solid color-mix(in srgb, var(--surface) 62%, transparent);
+  background:
+    linear-gradient(90deg, rgba(4, 26, 24, 0.7), rgba(4, 26, 24, 0.26)),
+    url("iubat-campus.jpg") center / cover no-repeat;
+}
+
+.section-image-header--experience,
+.section-image-header--projects,
+.section-image-header--skills {
+  background-position: center 62%;
+}
+
+.section-image-header--publications,
+.section-image-header--presentations,
+.section-image-header--awards {
+  background-position: center 38%;
+}
+
 .home-hero {
-  padding: 62px 0 54px;
+  padding: 100px 0 76px;
+  scroll-margin-top: calc(var(--header-height) + 18px);
+}
+
+.arrival-hero {
+  position: relative;
+  display: grid;
+  min-height: calc(100svh - var(--header-height));
+  overflow: hidden;
+  isolation: isolate;
+  color: #f8fffd;
+}
+
+.arrival-hero-image,
+.arrival-hero-overlay {
+  position: absolute;
+  inset: -24px;
+  z-index: -1;
+}
+
+.arrival-hero-image {
+  background: url("iubat-campus.jpg") center / cover no-repeat;
+  filter: blur(9px) saturate(0.82) brightness(0.72);
+  transform: scale(1.04);
+}
+
+.arrival-hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(4, 26, 24, 0.87), rgba(4, 26, 24, 0.58) 58%, rgba(4, 26, 24, 0.33)),
+    linear-gradient(0deg, rgba(4, 26, 24, 0.6), transparent 55%);
+}
+
+.arrival-hero-content {
+  align-self: center;
+  padding: 72px 0;
+}
+
+.arrival-kicker {
+  margin: 0 0 18px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #b4f5e6;
+}
+
+.arrival-hero h1 {
+  max-width: 920px;
+  margin: 0;
+  font-size: clamp(4rem, 11vw, 10rem);
+  line-height: 0.86;
+  letter-spacing: -0.065em;
+}
+
+.arrival-hero p:not(.arrival-kicker) {
+  max-width: 600px;
+  margin: 28px 0 0;
+  color: rgba(248, 255, 253, 0.85);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 650;
+}
+
+.arrival-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 42px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(248, 255, 253, 0.7);
+  color: inherit;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.arrival-scroll span:last-child {
+  font-size: 1.4rem;
+  line-height: 1;
+  animation: arrival-bob 1.8s ease-in-out infinite;
+}
+
+@keyframes arrival-bob {
+  50% { transform: translateY(5px); }
 }
 
 .home-hero-grid {
@@ -354,6 +457,10 @@ input {
   margin-top: 30px;
 }
 
+.publication-actions {
+  justify-content: center;
+}
+
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
@@ -392,8 +499,9 @@ input {
 
 .profile-frame img {
   width: 100%;
-  aspect-ratio: 1 / 1.18;
+  aspect-ratio: 1 / 1.1;
   object-fit: cover;
+  object-position: center top;
 }
 
 .stat-grid {
@@ -828,8 +936,11 @@ input {
 
 .site-footer {
   padding: 38px 0;
-  border-top: 1px solid var(--line);
-  background: var(--surface);
+  border-top: 1px solid color-mix(in srgb, var(--surface) 66%, transparent);
+  background: color-mix(in srgb, var(--surface) 68%, transparent);
+  box-shadow: 0 -12px 32px color-mix(in srgb, var(--ink) 6%, transparent);
+  backdrop-filter: blur(20px) saturate(1.25);
+  -webkit-backdrop-filter: blur(20px) saturate(1.25);
 }
 
 .footer-grid {
@@ -843,6 +954,7 @@ input {
 
 .footer-title {
   margin: 0;
+  font-size: 1.1rem;
   font-weight: 850;
 }
 
@@ -879,18 +991,33 @@ input {
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(3, minmax(112px, 1fr));
+  gap: 9px;
+}
+
+.footer-connect {
+  justify-self: end;
+}
+
+.footer-connect-label {
+  margin: 0 0 9px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .footer-links .social-link {
   min-height: 44px;
   padding: 0 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--bg);
+  border: 1px solid color-mix(in srgb, var(--surface) 72%, var(--line));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface) 60%, transparent);
   color: var(--ink);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--ink) 5%, transparent);
   text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, color 180ms ease;
 }
 
 .footer-links .social-link:hover,
@@ -898,7 +1025,27 @@ input {
   border-color: var(--accent);
   background: var(--accent-soft);
   color: var(--accent-strong);
+  transform: translateY(-2px);
   text-decoration: none;
+}
+
+.orcid-mark {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  place-items: center;
+  border-radius: 50%;
+  background: #a6ce39;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: -0.08em;
+}
+
+.orcid-link:hover .orcid-mark,
+.orcid-link:focus-visible .orcid-mark {
+  background: #89ae24;
 }
 
 .back-to-top {
@@ -1053,6 +1200,14 @@ input {
     justify-self: center;
     justify-content: center;
   }
+
+  .footer-connect {
+    justify-self: center;
+  }
+
+  .footer-connect-label {
+    text-align: center;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1135,6 +1290,10 @@ input {
     grid-template-columns: 1fr;
   }
 
+  .footer-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .timeline::before {
     left: 8px;
   }
@@ -1162,7 +1321,7 @@ input {
   }
 
   .footer-links {
-    grid-template-columns: repeat(4, 44px);
+    grid-template-columns: repeat(5, 44px);
     justify-content: center;
     justify-self: center;
     gap: 8px;
