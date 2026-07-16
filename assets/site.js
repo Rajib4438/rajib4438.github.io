@@ -29,7 +29,7 @@ const pages = [
   { id: "experience", label: "Experience", href: "experience.html" },
   { id: "publications", label: "Publications", href: "publications.html" },
   { id: "projects", label: "Projects", href: "projects.html" },
-  { id: "awards", label: "Awards", href: "awards.html" },
+  { id: "awards", label: "Awards & Certificates", href: "certificates.html" },
   { id: "presentations", label: "Presentations", href: "presentations.html" },
   { id: "skills", label: "Skills", href: "skills.html" },
   { id: "contact", label: "Contact", href: "contact.html" }
@@ -231,12 +231,13 @@ const projects = [
     links: [{ label: "Scholar", href: profile.scholar, icon: "external-link" }]
   },
   {
-    title: "Multi-Vendor E-Commerce Platform",
+    title: "HatBD",
     type: "Software",
     year: "2026",
     summary:
-      "Developed a full-scale platform with vendor dashboards, area-wise rider assignment, secure checkout, bKash payment integration, and automated PDF invoice generation.",
-    tags: ["Angular 17", "ASP.NET Core", "SQL Server", "bKash"],
+      "A multi-vendor e-commerce website built with ASP.NET Core, SQL Server, and Angular, featuring vendor dashboards, secure checkout, bKash payment integration, and PDF invoices.",
+    tags: ["Angular", "ASP.NET Core", "SQL Server", "bKash"],
+    image: "assets/Project Img/Index Page HatBD Destop.png",
     links: [{ label: "GitHub", href: profile.github, icon: "github" }]
   },
   {
@@ -262,6 +263,70 @@ const awards = [
     year: "2023",
     summary: "Qualified at the campus-level debating fest organized by the Debating Forum of IUBAT.",
     tags: ["Debate", "Communication"]
+  }
+];
+
+const certificates = [
+  {
+    title: "Conference Presentation Certificate",
+    issuer: "Academic conference participation",
+    file: "assets/Certificate's/Certificate_Presentation_PID-207.pdf",
+    preview: "assets/certificate-previews/Certificate_Presentation_PID-207.png",
+    kind: "PDF"
+  },
+  {
+    title: "Database Certificate",
+    issuer: "Database coursework and training",
+    file: "assets/Certificate's/Database.pdf",
+    preview: "assets/certificate-previews/Database.png",
+    kind: "PDF"
+  },
+  {
+    title: "Introduction to Web Development",
+    issuer: "HTML, CSS, and JavaScript",
+    file: "assets/Certificate's/Introduction to Web Development with HTML CSS  JavaScript.pdf",
+    preview: "assets/certificate-previews/Introduction to Web Development with HTML CSS  JavaScript.png",
+    kind: "PDF"
+  },
+  {
+    title: "QPAIN Certificate - PID 4532",
+    issuer: "QPAIN conference participation",
+    file: "assets/Certificate's/QPAIN_PID-4532.pdf",
+    preview: "assets/certificate-previews/QPAIN_PID-4532.png",
+    kind: "PDF"
+  },
+  {
+    title: "QPAIN Certificate - PID 4648",
+    issuer: "QPAIN conference participation",
+    file: "assets/Certificate's/QPAIN_PID-4648.pdf",
+    preview: "assets/certificate-previews/QPAIN_PID-4648.png",
+    kind: "PDF"
+  },
+  {
+    title: "QPAIN Certificate - PID 4671",
+    issuer: "QPAIN conference participation",
+    file: "assets/Certificate's/QPAIN_PID-4671.pdf",
+    preview: "assets/certificate-previews/QPAIN_PID-4671.png",
+    kind: "PDF"
+  },
+  {
+    title: "QPAIN Certificate - PID 4696",
+    issuer: "QPAIN conference participation",
+    file: "assets/Certificate's/QPAIN_PID-4696.pdf",
+    preview: "assets/certificate-previews/QPAIN_PID-4696.png",
+    kind: "PDF"
+  },
+  {
+    title: "Technocrats V.1 Volunteer Recognition",
+    issuer: "IUBAT Innovation and Entrepreneurship Center - 2023",
+    file: "assets/Certificate's/WhatsApp Image 2026-07-16 at 9.28.14 PM.jpeg",
+    kind: "Image"
+  },
+  {
+    title: "Software Engineering Internship",
+    issuer: "TechStdio - October 2025 to January 2026",
+    file: "assets/Certificate's/photo_2026-07-16_21-58-12.jpg",
+    kind: "Image"
   }
 ];
 
@@ -717,6 +782,7 @@ function projectCard(project) {
     <article class="project-card reveal" data-type="${escapeHtml(project.type)}" data-search="${escapeHtml(
       `${project.title} ${project.type} ${project.year} ${project.summary} ${project.tags.join(" ")}`
     ).toLowerCase()}">
+      ${project.image ? `<img class="project-image" src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} project interface">` : ""}
       <p class="project-meta">${escapeHtml(project.type)} | ${escapeHtml(project.year)}</p>
       <h3>${escapeHtml(project.title)}</h3>
       <p>${escapeHtml(project.summary)}</p>
@@ -774,6 +840,7 @@ function renderAwards() {
   return `
     <section class="section-band">
       <div class="container">
+        ${sectionHeading("Awards", "")}
         <div class="award-grid">
           ${awards
             .map(
@@ -785,6 +852,30 @@ function renderAwards() {
                   <p>${escapeHtml(award.summary)}</p>
                   ${tags(award.tags)}
                 </article>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+    <section class="section-band alt">
+      <div class="container">
+        ${sectionHeading("Certificates", "")}
+        <div class="certificate-grid">
+          ${certificates
+            .map(
+              (certificate) => `
+                <a class="certificate-card reveal" href="${escapeHtml(certificate.file)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(certificate.title)}">
+                  <div class="certificate-preview${certificate.preview || certificate.kind === "Image" ? " certificate-preview--image" : ""}">
+                    ${certificate.preview || certificate.kind === "Image" ? `<img src="${escapeHtml(certificate.preview || certificate.file)}" alt="Preview of ${escapeHtml(certificate.title)}">` : `<span class="certificate-file-type">PDF</span>${icon("file-text")}`}
+                  </div>
+                  <div class="certificate-content">
+                    <p class="certificate-kind">${escapeHtml(certificate.kind)} certificate</p>
+                    <h3>${escapeHtml(certificate.title)}</h3>
+                    <p>${escapeHtml(certificate.issuer)}</p>
+                    <span class="certificate-open">Open certificate ${icon("external-link")}</span>
+                  </div>
+                </a>
               `
             )
             .join("")}
