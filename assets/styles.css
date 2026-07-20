@@ -306,9 +306,14 @@ input {
   align-items: center;
 }
 
-.section-image-header--projects,
 .section-image-header--skills {
   background-position: center 62%;
+}
+
+.section-image-header--projects {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15)),
+    url("projects-header.png") center 35% / cover no-repeat;
 }
 
 .section-image-header--experience {
