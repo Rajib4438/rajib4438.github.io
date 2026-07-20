@@ -522,7 +522,7 @@ function renderHome() {
 
     <section class="section-band alt">
       <div class="container">
-        ${sectionHeading("Research Focus", "A concise map of the areas that connect Rajib's publications, thesis, and applied software work.")}
+        ${sectionHeading("Research Focus")}
         <div class="quick-grid">
           ${profile.interests
       .map(
@@ -541,7 +541,7 @@ function renderHome() {
 
     <section class="section-band">
       <div class="container">
-        ${sectionHeading("Featured Work", "Selected research and software projects that show the range of his academic and technical practice.")}
+        ${sectionHeading("Featured Work")}
         <div class="project-grid">
           ${projects
       .slice(0, 4)
@@ -553,7 +553,7 @@ function renderHome() {
 
     <section class="section-band alt">
       <div class="container">
-        ${sectionHeading("Recent Publications", "A quick view of recent papers. The publications page includes search and filtering.")}
+        ${sectionHeading("Recent Publications")}
         <div class="publication-list">
           ${featuredPublications.map((pub) => publicationItem(pub)).join("")}
         </div>
