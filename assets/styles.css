@@ -556,7 +556,7 @@ input {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 42%;
 }
 
 .stat-grid {
