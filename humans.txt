@@ -1,7 +1,7 @@
 /* TEAM */
 Site: Rajib Khan Portfolio
-Developer: kawshik.dev
-Developer URL: https://kawshik.dev/
+Developer: Rajib Khan
+Developer URL: https://github.com/Rajib4438
 
 /* THANKS */
 Portfolio content adapted from Rajib Khan's CV.

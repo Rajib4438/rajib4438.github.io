@@ -1022,8 +1022,8 @@ function renderFooter() {
           <a class="social-link orcid-link" href="${escapeHtml(profile.orcid)}" target="_blank" rel="noreferrer" aria-label="ORCID profile"><span class="orcid-mark" aria-hidden="true">iD</span><span class="footer-link-label">ORCID</span></a>
         </div>
       </div>
-      <!-- Developer attribution: kawshik.dev -->
-      <p class="developer-credit footer-credit-final">Developed by <a href="https://kawshik.dev" target="_blank" rel="noreferrer">kawshik.dev</a></p>
+      <!-- Developer attribution: Rajib Khan -->
+      <p class="developer-credit footer-credit-final">Developed by <a href="${escapeHtml(profile.github)}" target="_blank" rel="noreferrer">Rajib Khan</a></p>
     </div>
   `;
   const year = footer.querySelector("#year");
