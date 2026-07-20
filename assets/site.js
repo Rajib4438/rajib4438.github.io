@@ -1047,7 +1047,8 @@ function pageImageHeader(page) {
     skills: "Skills",
     contact: "Contact"
   };
-  return `<div class="section-image-header section-image-header--${escapeHtml(page)}" role="img" aria-label="${escapeHtml(labels[page] || "Portfolio")} header image"></div>`;
+  const titleHtml = page === "education" ? `<div class="container header-title-container"><h1 class="header-image-title">Education</h1></div>` : "";
+  return `<div class="section-image-header section-image-header--${escapeHtml(page)}" role="img" aria-label="${escapeHtml(labels[page] || "Portfolio")} header image">${titleHtml}</div>`;
 }
 
 function renderPage() {

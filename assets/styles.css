@@ -301,6 +301,9 @@ input {
   background:
     linear-gradient(90deg, rgba(4, 26, 24, 0.7), rgba(4, 26, 24, 0.26)),
     url("iubat-campus.jpg") center / cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .section-image-header--experience,
@@ -313,6 +316,33 @@ input {
 .section-image-header--presentations,
 .section-image-header--awards {
   background-position: center 38%;
+}
+
+.section-image-header--education {
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15)),
+    url("education-header.jpg") center right / cover no-repeat;
+}
+
+.header-title-container {
+  width: min(100% - 36px, var(--max-width));
+  margin: 0 auto;
+}
+
+.header-image-title {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2.2rem, 6.5vw, 5rem);
+  font-weight: 850;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.65), 0 1px 2px rgba(0, 0, 0, 0.85);
+  max-width: 60%;
+}
+
+@media (max-width: 640px) {
+  .header-image-title {
+    max-width: 100%;
+    text-align: center;
+  }
 }
 
 .home-hero {
