@@ -1013,13 +1013,6 @@ function renderFooter() {
   const footer = document.querySelector("#site-footer");
   footer.innerHTML = `
     <div class="footer-layout container">
-      <div class="footer-left">
-        <p class="footer-text-row">Thanks & Best Regards,</p>
-        <p class="footer-text-row footer-name-row"><strong>${escapeHtml(profile.name)}</strong></p>
-        <p class="footer-text-row footer-detail-gap">B.Sc. in Computer Science and Engineering</p>
-        <p class="footer-text-row">${escapeHtml(profile.affiliation)}</p>
-        <p class="footer-text-row">Uttara, Dhaka-1230, Bangladesh</p>
-      </div>
       <div class="footer-middle">
         <div class="footer-social-icons">
           <a class="social-circle-link orcid-circle" href="${escapeHtml(profile.orcid)}" target="_blank" rel="noreferrer" aria-label="ORCID"><span class="orcid-circle-mark" aria-hidden="true">iD</span></a>
@@ -1030,10 +1023,18 @@ function renderFooter() {
           <a class="social-circle-link whatsapp-circle" href="https://wa.me/8801909259760" target="_blank" rel="noreferrer" aria-label="WhatsApp">${icon("whatsapp")}</a>
         </div>
       </div>
+      <div class="footer-left">
+        <p class="footer-text-row">Thanks & Best Regards,</p>
+        <p class="footer-text-row footer-name-row"><strong>${escapeHtml(profile.name)}</strong></p>
+        <p class="footer-text-row footer-detail-gap">B.Sc. in Computer Science and Engineering</p>
+        <p class="footer-text-row">${escapeHtml(profile.affiliation)}</p>
+        <p class="footer-text-row">Uttara, Dhaka-1230, Bangladesh</p>
+      </div>
       <div class="footer-right">
         <p class="footer-email-header">Email:</p>
         <a class="footer-email-link" href="mailto:rajibkhan4438@gmail.com">rajibkhan4438@gmail.com</a>
         <a class="footer-email-link" href="mailto:22103057@iubat.edu">22103057@iubat.edu</a>
+        <div style="height: 12px;"></div>
         <a class="footer-email-link" href="mailto:k.rajib4438@gmail.com">k.rajib4438@gmail.com</a>
       </div>
     </div>
