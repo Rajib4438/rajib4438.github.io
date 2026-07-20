@@ -521,7 +521,7 @@ function renderHome() {
         </div>
         <aside class="hero-aside reveal">
           <div class="profile-frame">
-            <img src="assets/Khan_new.jpg" alt="Headshot of Rajib Khan">
+            <img src="assets/Khan.webp" alt="Headshot of Rajib Khan">
           </div>
         </aside>
       </div>
