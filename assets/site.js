@@ -1049,8 +1049,7 @@ function pageImageHeader(page) {
     skills: "Skills",
     contact: "Contact"
   };
-  const titleHtml = (page === "projects") ? `<div class="container header-title-container"><h1 class="header-image-title">${escapeHtml(labels[page])}</h1></div>` : "";
-  return `<div class="section-image-header section-image-header--${escapeHtml(page)}" role="img" aria-label="${escapeHtml(labels[page] || "Portfolio")} header image">${titleHtml}</div>`;
+  return `<div class="section-image-header section-image-header--${escapeHtml(page)}" role="img" aria-label="${escapeHtml(labels[page] || "Portfolio")} header image"></div>`;
 }
 
 function renderPage() {
