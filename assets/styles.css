@@ -338,7 +338,7 @@ input {
 
 .arrival-hero-image {
   background: url("iubat-campus.jpg") center 20% / cover no-repeat;
-  filter: blur(1px) saturate(0.85) brightness(0.55);
+  filter: saturate(0.85) brightness(0.55);
   transform: scale(1.04);
 }
 
