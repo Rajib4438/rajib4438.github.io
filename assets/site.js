@@ -516,20 +516,6 @@ function renderHome() {
           <div class="profile-frame">
             <img src="assets/Khan.webp" alt="Headshot of Rajib Khan">
           </div>
-          <div class="stat-grid" aria-label="Portfolio highlights">
-            <div class="stat-tile">
-              <span class="stat-number">4,069</span>
-              <span class="stat-label">Bengali dataset entries curated</span>
-            </div>
-            <div class="stat-tile">
-              <span class="stat-number">9</span>
-              <span class="stat-label">research publications and preprints</span>
-            </div>
-            <div class="stat-tile">
-              <span class="stat-number">2</span>
-              <span class="stat-label">IEEE presentation formats</span>
-            </div>
-          </div>
         </aside>
       </div>
     </section>
@@ -539,16 +525,16 @@ function renderHome() {
         ${sectionHeading("Research Focus", "A concise map of the areas that connect Rajib's publications, thesis, and applied software work.")}
         <div class="quick-grid">
           ${profile.interests
-            .map(
-              (interest, index) => `
+      .map(
+        (interest, index) => `
                 <article class="info-card reveal">
                   <div class="card-icon">${icon(index % 3 === 0 ? "book" : index % 3 === 1 ? "code" : "search")}</div>
                   <h3>${escapeHtml(interest)}</h3>
                   <p>${researchDescription(interest)}</p>
                 </article>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
       </div>
     </section>
@@ -558,9 +544,9 @@ function renderHome() {
         ${sectionHeading("Featured Work", "Selected research and software projects that show the range of his academic and technical practice.")}
         <div class="project-grid">
           ${projects
-            .slice(0, 4)
-            .map((project) => projectCard(project))
-            .join("")}
+      .slice(0, 4)
+      .map((project) => projectCard(project))
+      .join("")}
         </div>
       </div>
     </section>
@@ -598,8 +584,8 @@ function renderEducation() {
       <div class="container">
         <div class="timeline">
           ${education
-            .map(
-              (item) => `
+      .map(
+        (item) => `
                 <article class="timeline-item reveal">
                   <div class="timeline-top">
                     <div>
@@ -615,8 +601,8 @@ function renderEducation() {
                   ${item.tags ? tags(item.tags) : ""}
                 </article>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
       </div>
     </section>
@@ -675,11 +661,11 @@ function renderPublications() {
           </label>
           <div class="segmented" role="group" aria-label="Publication filters">
             ${filters
-              .map(
-                (filter, index) =>
-                  `<button class="seg-button" type="button" data-publication-filter="${escapeHtml(filter)}" aria-pressed="${index === 0}">${escapeHtml(filter)}</button>`
-              )
-              .join("")}
+      .map(
+        (filter, index) =>
+          `<button class="seg-button" type="button" data-publication-filter="${escapeHtml(filter)}" aria-pressed="${index === 0}">${escapeHtml(filter)}</button>`
+      )
+      .join("")}
           </div>
         </div>
         <div class="publication-list" id="publication-list">
@@ -697,8 +683,8 @@ function renderPublications() {
 function publicationItem(pub) {
   return `
     <article class="publication-item reveal" data-type="${escapeHtml(pub.type)}" data-search="${escapeHtml(
-      `${pub.title} ${pub.authors} ${pub.venue} ${pub.year} ${pub.type}`
-    ).toLowerCase()}">
+    `${pub.title} ${pub.authors} ${pub.venue} ${pub.year} ${pub.type}`
+  ).toLowerCase()}">
       <div class="publication-head">
         <div>
           <span class="pub-type">${escapeHtml(pub.type)} | ${escapeHtml(pub.year)}</span>
@@ -762,11 +748,11 @@ function renderProjects() {
           </label>
           <div class="segmented" role="group" aria-label="Project filters">
             ${filters
-              .map(
-                (filter, index) =>
-                  `<button class="seg-button" type="button" data-project-filter="${escapeHtml(filter)}" aria-pressed="${index === 0}">${escapeHtml(filter)}</button>`
-              )
-              .join("")}
+      .map(
+        (filter, index) =>
+          `<button class="seg-button" type="button" data-project-filter="${escapeHtml(filter)}" aria-pressed="${index === 0}">${escapeHtml(filter)}</button>`
+      )
+      .join("")}
           </div>
         </div>
         <div class="project-grid" id="project-list">
@@ -780,8 +766,8 @@ function renderProjects() {
 function projectCard(project) {
   return `
     <article class="project-card reveal" data-type="${escapeHtml(project.type)}" data-search="${escapeHtml(
-      `${project.title} ${project.type} ${project.year} ${project.summary} ${project.tags.join(" ")}`
-    ).toLowerCase()}">
+    `${project.title} ${project.type} ${project.year} ${project.summary} ${project.tags.join(" ")}`
+  ).toLowerCase()}">
       ${project.image ? `<img class="project-image" src="${escapeHtml(project.image)}" alt="${escapeHtml(project.title)} project interface">` : ""}
       <p class="project-meta">${escapeHtml(project.type)} | ${escapeHtml(project.year)}</p>
       <h3>${escapeHtml(project.title)}</h3>
@@ -789,11 +775,11 @@ function projectCard(project) {
       ${tags(project.tags)}
       <div class="project-links">
         ${project.links
-          .map(
-            (link) =>
-              `<a class="mini-link" href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${icon(link.icon)}${escapeHtml(link.label)}</a>`
-          )
-          .join("")}
+      .map(
+        (link) =>
+          `<a class="mini-link" href="${escapeHtml(link.href)}" target="_blank" rel="noreferrer">${icon(link.icon)}${escapeHtml(link.label)}</a>`
+      )
+      .join("")}
       </div>
     </article>
   `;
@@ -843,8 +829,8 @@ function renderAwards() {
         ${sectionHeading("Awards", "")}
         <div class="award-grid">
           ${awards
-            .map(
-              (award) => `
+      .map(
+        (award) => `
                 <article class="award-card reveal">
                   <div class="card-icon">${icon("award")}</div>
                   <p class="project-meta">${escapeHtml(award.year)}</p>
@@ -853,8 +839,8 @@ function renderAwards() {
                   ${tags(award.tags)}
                 </article>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
       </div>
     </section>
@@ -863,8 +849,8 @@ function renderAwards() {
         ${sectionHeading("Certificates", "")}
         <div class="certificate-grid">
           ${certificates
-            .map(
-              (certificate) => `
+      .map(
+        (certificate) => `
                 <a class="certificate-card reveal" href="${escapeHtml(certificate.file)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(certificate.title)}">
                   <div class="certificate-preview${certificate.preview || certificate.kind === "Image" ? " certificate-preview--image" : ""}">
                     ${certificate.preview || certificate.kind === "Image" ? `<img src="${escapeHtml(certificate.preview || certificate.file)}" alt="Preview of ${escapeHtml(certificate.title)}">` : `<span class="certificate-file-type">PDF</span>${icon("file-text")}`}
@@ -877,8 +863,8 @@ function renderAwards() {
                   </div>
                 </a>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
       </div>
     </section>
@@ -891,8 +877,8 @@ function renderPresentations() {
       <div class="container">
         <div class="timeline">
           ${presentations
-            .map(
-              (item) => `
+      .map(
+        (item) => `
                 <article class="timeline-item reveal">
                   <div class="timeline-top">
                     <div>
@@ -904,8 +890,8 @@ function renderPresentations() {
                   <p>${escapeHtml(item.place)}</p>
                 </article>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
       </div>
     </section>
@@ -918,31 +904,31 @@ function renderSkills() {
       <div class="container skills-layout">
         <div class="skill-grid">
           ${skills
-            .map(
-              (group) => `
+      .map(
+        (group) => `
                 <article class="skill-group reveal">
                   <div class="card-icon">${icon(group.group.includes("Programming") ? "code" : "book")}</div>
                   <h3>${escapeHtml(group.group)}</h3>
                   ${tags(group.items)}
                 </article>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
         <aside class="skill-group reveal">
           <div class="card-icon">${icon("user")}</div>
           <h3>Languages</h3>
           <div class="language-list">
             ${languages
-              .map(
-                (language) => `
+      .map(
+        (language) => `
                   <div class="language-row">
                     <strong>${escapeHtml(language.name)}</strong>
                     <span>${escapeHtml(language.level)}</span>
                   </div>
                 `
-              )
-              .join("")}
+      )
+      .join("")}
           </div>
         </aside>
       </div>
@@ -980,8 +966,8 @@ function renderContact() {
       <div class="container">
         <div class="contact-grid">
           ${contacts
-            .map(
-              (contact) => `
+      .map(
+        (contact) => `
                 <article class="contact-card reveal">
                   <div class="card-icon">${icon(contact.iconName)}</div>
                   <h3>${escapeHtml(contact.title)}</h3>
@@ -991,8 +977,8 @@ function renderContact() {
                   </a>
                 </article>
               `
-            )
-            .join("")}
+      )
+      .join("")}
         </div>
         <div class="cv-panel reveal" style="margin-top: 18px;">
           <div>
