@@ -12,7 +12,7 @@ const profile = {
   orcid: "https://orcid.org/0009-0002-6688-8818",
   cv: "MY_CV.docx.pdf",
   summary:
-    "IUBAT CSE graduate and researcher building practical NLP tools for Bengali and Banglish language communities.",
+    "Hi, I'm **Rajib Khan**, a Computer Science and Engineering graduate from **IUBAT (International University of Business Agriculture and Technology)**. I am passionate about Software Engineering, Artificial Intelligence, Machine Learning, and Natural Language Processing (NLP). I have authored multiple research publications, including papers published in **IEEE conferences** and an **international journal**, focusing on Bangla NLP and AI applications. During my academic journey, I completed an internship and developed several software, web-based, and data analysis projects that strengthened my practical and problem-solving skills. I enjoy learning emerging technologies, building impactful solutions, and contributing to the advancement of AI through research and innovation.",
   interests: [
     "Low-resource NLP",
     "Bengali and Banglish text",
@@ -502,7 +502,7 @@ function renderHome() {
           <div class="hero-kicker">About me</div>
           <h2 class="hero-title" id="about-me-title">About Me</h2>
           <p class="hero-role">${escapeHtml(profile.title)} | ${escapeHtml(profile.affiliation)}</p>
-          <p class="hero-lede">${escapeHtml(profile.summary)}</p>
+          <p class="hero-lede">${escapeHtml(profile.summary).replaceAll(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")}</p>
           <div class="hero-actions">
             ${linkButton("Google Scholar", profile.scholar, "ghost", "external-link", 'target="_blank" rel="noreferrer"')}
           </div>
