@@ -323,7 +323,7 @@ input {
 .arrival-hero {
   position: relative;
   display: grid;
-  min-height: calc(100svh - var(--header-height));
+  min-height: calc(67svh - var(--header-height));
   overflow: hidden;
   isolation: isolate;
   color: #f8fffd;
@@ -338,7 +338,7 @@ input {
 
 .arrival-hero-image {
   background: url("iubat-campus.jpg") center / cover no-repeat;
-  filter: blur(4px) saturate(0.85) brightness(0.62);
+  filter: blur(2px) saturate(0.85) brightness(0.6);
   transform: scale(1.04);
 }
 
@@ -350,7 +350,7 @@ input {
 
 .arrival-hero-content {
   align-self: center;
-  padding: 72px 0;
+  padding: 48px 0;
 }
 
 .arrival-kicker {
@@ -397,7 +397,9 @@ input {
 }
 
 @keyframes arrival-bob {
-  50% { transform: translateY(5px); }
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 .home-hero-grid {
@@ -745,7 +747,7 @@ input {
   color: var(--muted);
 }
 
-.clean-list li + li {
+.clean-list li+li {
   margin-top: 8px;
 }
 
@@ -1335,6 +1337,7 @@ input {
 }
 
 @media (max-width: 640px) {
+
   .container,
   .footer-grid {
     width: min(100% - 24px, var(--max-width));
@@ -1470,6 +1473,7 @@ input {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
