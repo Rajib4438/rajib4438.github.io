@@ -40,7 +40,7 @@ const education = [
     degree: "Bachelor of Computer Science and Engineering",
     institution: "International University of Business Agriculture and Technology (IUBAT)",
     location: "Dhaka, Bangladesh",
-    date: "Jan 2022 - Jan 2026",
+    date: "Jan 2022 - April 2026",
     meta: "CGPA: 3.47/4.00 | Major CGPA: 3.53/4.00",
     thesis:
       "Enhancing Multi-Label Classification in Bengali Contextual Questions using BERT-based Architecture",
@@ -55,12 +55,14 @@ const education = [
     degree: "Higher Secondary Certificate (HSC)",
     institution: "Rajbari Government College",
     location: "Rajbari, Bangladesh",
+    date: "2020",
     meta: "GPA: 4.50/5.00"
   },
   {
     degree: "Secondary School Certificate (SSC)",
     institution: "Goalanda Nazir Uddin Pilot Government High School",
     location: "Goalanda, Rajbari, Bangladesh",
+    date: "2018",
     meta: "GPA: 4.11/5.00"
   }
 ];
