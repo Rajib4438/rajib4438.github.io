@@ -501,7 +501,6 @@ function renderHome() {
         <div class="hero-copy reveal">
           <div class="hero-kicker">About me</div>
           <h2 class="hero-title" id="about-me-title">About Me</h2>
-          <p class="hero-role">${escapeHtml(profile.title)} | ${escapeHtml(profile.affiliation)}</p>
           <p class="hero-lede">${escapeHtml(profile.summary).replaceAll(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")}</p>
           <div class="hero-actions">
             ${linkButton("Google Scholar", profile.scholar, "ghost", "external-link", 'target="_blank" rel="noreferrer"')}
