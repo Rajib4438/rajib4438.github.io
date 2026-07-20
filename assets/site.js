@@ -30,7 +30,7 @@ const pages = [
   { id: "publications", label: "Publications", href: "publications.html" },
   { id: "projects", label: "Projects", href: "projects.html" },
   { id: "awards", label: "Awards & Certificates", href: "certificates.html" },
-  { id: "presentations", label: "Presentations", href: "presentations.html" },
+  { id: "presentations", label: "Presentation & Workshop", href: "presentations.html" },
   { id: "skills", label: "Skills", href: "skills.html" },
   { id: "contact", label: "Contact", href: "contact.html" }
 ];
@@ -1042,7 +1042,7 @@ function pageImageHeader(page) {
     publications: "Publications",
     projects: "Projects",
     awards: "Awards",
-    presentations: "Presentations",
+    presentations: "Presentation & Workshop",
     skills: "Skills",
     contact: "Contact"
   };
