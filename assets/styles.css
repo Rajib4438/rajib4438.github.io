@@ -307,7 +307,9 @@ input {
 }
 
 .section-image-header--skills {
-  background-position: center 62%;
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("skills-header.png") center / cover no-repeat;
 }
 
 .section-image-header--projects {
