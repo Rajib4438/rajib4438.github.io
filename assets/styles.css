@@ -341,7 +341,7 @@ input {
 .section-image-header--education {
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.15)),
-    url("education-header.jpg") center right / cover no-repeat;
+    url("education-header.png") center / cover no-repeat;
 }
 
 .header-title-container {
