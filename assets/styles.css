@@ -322,9 +322,14 @@ input {
     url("experience-header.png") center / cover no-repeat;
 }
 
-.section-image-header--presentations,
 .section-image-header--awards {
   background-position: center 38%;
+}
+
+.section-image-header--presentations {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)),
+    url("presentations-header.png") center / cover no-repeat;
 }
 
 .section-image-header--publications {
