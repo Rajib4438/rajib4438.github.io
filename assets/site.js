@@ -1024,6 +1024,7 @@ function renderFooter() {
         <div class="footer-social-icons">
           <a class="social-circle-link orcid-circle" href="${escapeHtml(profile.orcid)}" target="_blank" rel="noreferrer" aria-label="ORCID"><span class="orcid-circle-mark" aria-hidden="true">iD</span></a>
           <a class="social-circle-link linkedin-circle" href="${escapeHtml(profile.linkedin)}" target="_blank" rel="noreferrer" aria-label="LinkedIn">${icon("linkedin")}</a>
+          <a class="social-circle-link github-circle" href="${escapeHtml(profile.github)}" target="_blank" rel="noreferrer" aria-label="GitHub">${icon("github")}</a>
           <a class="social-circle-link facebook-circle" href="https://www.facebook.com/rajib.khan.676517/about" target="_blank" rel="noreferrer" aria-label="Facebook">${icon("facebook")}</a>
           <a class="social-circle-link scholar-circle" href="${escapeHtml(profile.scholar)}" target="_blank" rel="noreferrer" aria-label="Google Scholar">${icon("scholar")}</a>
           <a class="social-circle-link whatsapp-circle" href="https://wa.me/8801909259760" target="_blank" rel="noreferrer" aria-label="WhatsApp">${icon("whatsapp")}</a>

@@ -1179,7 +1179,7 @@ input {
 
 .footer-email-link {
   font-size: 0.9rem;
-  color: var(--accent-strong);
+  color: var(--amber);
   text-decoration: underline;
   font-weight: 600;
   transition: color 180ms ease;
@@ -1237,6 +1237,10 @@ input {
 
 .linkedin-circle {
   background: #737373;
+}
+
+.github-circle {
+  background: #24292e;
 }
 
 .facebook-circle {
