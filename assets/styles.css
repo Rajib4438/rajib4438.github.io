@@ -306,10 +306,15 @@ input {
   align-items: center;
 }
 
-.section-image-header--experience,
 .section-image-header--projects,
 .section-image-header--skills {
   background-position: center 62%;
+}
+
+.section-image-header--experience {
+  background:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("experience-header.png") center / cover no-repeat;
 }
 
 .section-image-header--publications,
