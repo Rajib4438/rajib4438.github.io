@@ -201,7 +201,7 @@ const projects = [
     summary:
       "Curated a contextual multi-label question-answering dataset for Bengali NLP, bringing together 4,069 entries from true Bengali texts and supporting low-resource model development.",
     tags: ["Dataset", "Bengali NLP", "Multi-label QA"],
-    links: [{ label: "Scholar", href: profile.scholar, icon: "external-link" }]
+    links: [{ label: "Scholar", href: profile.scholar, icon: "scholar" }]
   },
   {
     title: "Bengali Contextual Question Classification",
@@ -219,7 +219,7 @@ const projects = [
     summary:
       "Built the complete dataset and contributed core writing for an aspect-based sentiment analysis study of Bangladeshi IT service reviews using transformer models and post-hoc interpretability.",
     tags: ["ABSA", "Transformers", "Interpretability"],
-    links: [{ label: "Scholar", href: profile.scholar, icon: "external-link" }]
+    links: [{ label: "Scholar", href: profile.scholar, icon: "scholar" }]
   },
   {
     title: "Public Sentiment on National Infrastructure",
@@ -411,6 +411,8 @@ const icons = {
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 7.3A9 9 0 1 1 12 3z"/></svg>',
   phone:
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2.1z"/></svg>',
+  scholar:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>',
   search:
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>',
   sun:
@@ -503,7 +505,7 @@ function renderHome() {
           <h2 class="hero-title" id="about-me-title">About Me</h2>
           <p class="hero-lede">${escapeHtml(profile.summary).replaceAll(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")}</p>
           <div class="hero-actions">
-            ${linkButton("Google Scholar", profile.scholar, "ghost", "external-link", 'target="_blank" rel="noreferrer"')}
+            ${linkButton("Google Scholar", profile.scholar, "ghost", "scholar", 'target="_blank" rel="noreferrer"')}
           </div>
           <div class="hero-meta">
             <span class="meta-pill">${icon("map")}${escapeHtml(profile.location)}</span>
@@ -671,7 +673,7 @@ function renderPublications() {
           ${publications.map((pub) => publicationItem(pub)).join("")}
         </div>
         <div class="contact-actions reveal">
-          ${linkButton("Google Scholar Profile", profile.scholar, "primary", "external-link", 'target="_blank" rel="noreferrer"')}
+          ${linkButton("Google Scholar Profile", profile.scholar, "primary", "scholar", 'target="_blank" rel="noreferrer"')}
           ${linkButton("Download Full CV", profile.cv, "ghost", "download", "download")}
         </div>
       </div>
@@ -1016,7 +1018,7 @@ function renderFooter() {
           <a class="social-link" href="mailto:${escapeHtml(profile.email)}" aria-label="Email">${icon("mail")}<span class="footer-link-label">Email</span></a>
           <a class="social-link" href="${escapeHtml(profile.linkedin)}" target="_blank" rel="noreferrer" aria-label="LinkedIn">${icon("linkedin")}<span class="footer-link-label">LinkedIn</span></a>
           <a class="social-link" href="${escapeHtml(profile.github)}" target="_blank" rel="noreferrer" aria-label="GitHub">${icon("github")}<span class="footer-link-label">GitHub</span></a>
-          <a class="social-link" href="${escapeHtml(profile.scholar)}" target="_blank" rel="noreferrer" aria-label="Google Scholar">${icon("external-link")}<span class="footer-link-label">Scholar</span></a>
+          <a class="social-link" href="${escapeHtml(profile.scholar)}" target="_blank" rel="noreferrer" aria-label="Google Scholar">${icon("scholar")}<span class="footer-link-label">Scholar</span></a>
           <a class="social-link orcid-link" href="${escapeHtml(profile.orcid)}" target="_blank" rel="noreferrer" aria-label="ORCID profile"><span class="orcid-mark" aria-hidden="true">iD</span><span class="footer-link-label">ORCID</span></a>
         </div>
       </div>
