@@ -554,18 +554,6 @@ function renderHome() {
 
     <section class="section-band">
       <div class="container">
-        ${sectionHeading("Featured Work")}
-        <div class="project-grid">
-          ${projects
-      .slice(0, 4)
-      .map((project) => projectCard(project))
-      .join("")}
-        </div>
-      </div>
-    </section>
-
-    <section class="section-band alt">
-      <div class="container">
         ${sectionHeading("Recent Publications")}
         <div class="publication-list">
           ${featuredPublications.map((pub) => publicationItem(pub)).join("")}
