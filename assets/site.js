@@ -12,7 +12,7 @@ const profile = {
   orcid: "https://orcid.org/0009-0002-6688-8818",
   cv: "MY_CV.docx.pdf",
   summary:
-    "Hi, I'm **Rajib Khan**, a Computer Science and Engineering graduate from **IUBAT (International University of Business Agriculture and Technology)**. I am passionate about Software Engineering, Artificial Intelligence, Machine Learning, and Natural Language Processing (NLP). I have authored multiple research publications, including papers published in **IEEE conferences** and an **international journal**, focusing on Bangla NLP and AI applications. During my academic journey, I completed an internship and developed several software, web-based, and data analysis projects that strengthened my practical and problem-solving skills. I enjoy learning emerging technologies, building impactful solutions, and contributing to the advancement of AI through research and innovation.",
+    "Hello! I'm **Rajib Khan**, a Computer Science and Engineering graduate from the **International University of Business Agriculture and Technology (IUBAT)**, with a strong interest in **Artificial Intelligence (AI)**, **Machine Learning (ML)**, and **Natural Language Processing (NLP)**. Software Engineering.\n\nMy research primarily focuses on **Bangla NLP** and **AI-driven applications**. I have authored multiple research publications, including papers presented at **IEEE conferences** and an **international journal**, where my work explores language technologies, sentiment analysis, and intelligent systems. Through these research experiences, I have developed a deep interest in applying AI to solve real-world challenges and contribute to the advancement of language technologies.\n\nAlongside my research, I completed an industry internship and worked on a variety of **software, web-based, and data analysis projects**. These experiences strengthened my programming, analytical, and problem-solving skills while giving me practical exposure to software development and modern AI technologies.\n\nI am passionate about continuously learning emerging technologies, conducting impactful research, and building **intelligent solutions** that create meaningful real-world impact. My long-term goal is to contribute to cutting-edge research and innovation in **AI and NLP** while pursuing advanced studies and collaborating with researchers worldwide.",
   interests: [
     "Low-resource NLP",
     "Bengali and Banglish text",
@@ -506,26 +506,29 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="home-hero" id="about-me" aria-labelledby="about-me-title">
-      <div class="container home-hero-grid">
-        <div class="hero-copy reveal">
-          <div class="hero-kicker">About me</div>
-          <h2 class="hero-title" id="about-me-title">About Me</h2>
-          <p class="hero-lede">${escapeHtml(profile.summary).replaceAll(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")}</p>
-          <div class="hero-actions">
-            ${linkButton("Google Scholar", profile.scholar, "ghost", "scholar", 'target="_blank" rel="noreferrer"')}
-          </div>
-          <div class="hero-meta">
-            <span class="meta-pill">${icon("map")}${escapeHtml(profile.location)}</span>
-            <span class="meta-pill">${icon("book")}9 publications and preprints</span>
-            <span class="meta-pill">${icon("code")}Full-stack research engineering</span>
+    <section class="home-hero" id="about-me">
+      <div class="container new-about-container">
+        
+        <div class="about-slider-wrap reveal">
+          <div class="about-slider-bar"></div>
+          <span class="about-slider-text" id="about-slider-text">RESEARCHER</span>
+        </div>
+
+        <div class="home-hero-grid">
+          <aside class="hero-aside reveal">
+            <div class="profile-frame">
+              <img src="assets/Khan.webp" alt="Headshot of Rajib Khan">
+            </div>
+          </aside>
+          
+          <div class="hero-copy reveal">
+            <h2 class="new-hello-heading">Hello.</h2>
+            <div class="hero-paragraphs">
+              ${profile.summary.split("\n\n").map(para => `<p class="hero-lede-paragraph">${escapeHtml(para).replaceAll(/\*\*([\s\S]*?)\*\*/g, "<strong>$1</strong>")}</p>`).join("")}
+            </div>
           </div>
         </div>
-        <aside class="hero-aside reveal">
-          <div class="profile-frame">
-            <img src="assets/Khan.webp" alt="Headshot of Rajib Khan">
-          </div>
-        </aside>
+
       </div>
     </section>
 
@@ -1083,6 +1086,7 @@ function renderPage() {
   main.innerHTML = page === "home" ? pageContent : `${pageImageHeader(page)}${pageContent}`;
   if (page === "publications") bindPublicationFilters();
   if (page === "projects") bindProjectFilters();
+  if (page === "home") initAboutSlider();
   bindCopyEmail();
   initReveal();
 }
@@ -1167,6 +1171,25 @@ function bindCopyEmail() {
       showToast("Email copied");
     });
   });
+}
+
+let aboutSliderInterval = null;
+function initAboutSlider() {
+  const container = document.querySelector("#about-slider-text");
+  if (!container) return;
+  const words = ["LEARNER", "RESEARCHER"];
+  let index = 1;
+  if (aboutSliderInterval) {
+    clearInterval(aboutSliderInterval);
+  }
+  aboutSliderInterval = setInterval(() => {
+    container.style.opacity = "0";
+    setTimeout(() => {
+      container.textContent = words[index];
+      container.style.opacity = "1";
+      index = (index + 1) % words.length;
+    }, 300);
+  }, 2000);
 }
 
 async function copyText(text) {
