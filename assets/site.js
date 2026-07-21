@@ -1,7 +1,7 @@
 const profile = {
   name: "Rajib Khan",
   shortName: "Rajib",
-  title: "NLP Researcher and CSE Graduate",
+  title: "Computer Science & Engineering Graduate | AI & NLP Researcher",
   affiliation: "International University of Business Agriculture and Technology (IUBAT)",
   location: "Dhaka, Bangladesh",
   email: "rajibkhan4438@gmail.com",
@@ -496,13 +496,8 @@ function renderHome() {
       <div class="arrival-hero-image" aria-hidden="true"></div>
       <div class="arrival-hero-overlay" aria-hidden="true"></div>
       <div class="container arrival-hero-content">
-        <p class="arrival-kicker">Academic Portfolio</p>
         <h1 id="arrival-name">${escapeHtml(profile.name)}</h1>
-        <p>${escapeHtml(profile.title)}</p>
-        <a class="arrival-scroll" href="#about-me" aria-label="Scroll to learn more about Rajib Khan">
-          <span>Discover my work</span>
-          <span aria-hidden="true">↓</span>
-        </a>
+        <p class="arrival-subtitle">${escapeHtml(profile.title)}</p>
       </div>
     </section>
 
