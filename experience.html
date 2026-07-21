@@ -34,33 +34,36 @@
 </head>
 
 <body data-page="experience">
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-progress" id="scroll-progress"></div>
-  <header class="site-header" id="site-header">
-    <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="Rajib Khan home">
-        <span class="brand-mark">RK</span>
-        <span class="brand-text">Rajib Khan</span>
-      </a>
-      <nav class="nav" id="primary-nav" aria-label="Primary navigation"></nav>
-      <div class="header-actions">
-        <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle color theme">
-          <span data-icon="moon"></span>
-        </button>
-        <button class="icon-button menu-toggle" id="menu-toggle" type="button" aria-label="Open menu"
-          aria-expanded="false">
-          <span data-icon="menu"></span>
-        </button>
+  <!-- Layout Wrapper -->
+  <div class="layout-wrapper">
+    <!-- Header -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">RK</span>
+          <span class="brand-text">Rajib Khan</span>
+        </a>
+        <nav class="nav" id="primary-nav" aria-label="Primary navigation"></nav>
+        <div class="header-actions">
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle theme">
+            <span class="theme-toggle-light" data-icon="sun"></span>
+            <span class="theme-toggle-dark" data-icon="moon"></span>
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
-  <main class="site-main" id="main" tabindex="-1"></main>
-  <footer class="site-footer" id="site-footer"></footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main" id="site-main"></main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="site-footer"></footer>
+  </div>
+
   <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
     <span data-icon="arrow-up"></span>
   </button>
-  <script src="assets/site.js?v=18" defer></script>
+  <script src="assets/site.js?v=17" defer></script>
 </body>
 
 </html>

@@ -497,7 +497,7 @@ function renderHome() {
       <div class="arrival-hero-overlay" aria-hidden="true"></div>
       <div class="container arrival-hero-content">
         <h1 id="arrival-name">${escapeHtml(profile.name)}</h1>
-        <p class="arrival-subtitle">${escapeHtml(profile.title)}</p>
+        <p>${escapeHtml(profile.title)}</p>
       </div>
     </section>
 
@@ -1189,10 +1189,10 @@ function initAboutSlider() {
     clearInterval(aboutSliderInterval);
   }
   aboutSliderInterval = setInterval(() => {
-    container.classList.add("slider-hidden");
+    container.style.opacity = "0";
     setTimeout(() => {
       container.textContent = words[index];
-      container.classList.remove("slider-hidden");
+      container.style.opacity = "1";
       index = (index + 1) % words.length;
     }, 300);
   }, 2000);

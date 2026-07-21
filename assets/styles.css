@@ -402,32 +402,37 @@ input {
 
 .arrival-hero-content {
   align-self: center;
-  padding: 48px 0 48px clamp(24px, 9vw, 150px);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 4px 22px rgba(0, 0, 0, 0.7);
+  padding: 88px 0;
+  padding-left: clamp(24px, 12vw, 120px);
+  /* Positioned between left and middle */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85), 0 4px 22px rgba(0, 0, 0, 0.7);
 }
 
 .arrival-kicker {
-  display: none;
-  /* Removed as requested */
+  margin: 0 0 18px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #b4f5e6;
 }
 
 .arrival-hero h1 {
-  max-width: 920px;
   margin: 0;
-  font-size: clamp(2.4rem, 6.2vw, 4.4rem);
-  /* Smaller name sized to match Afrid template */
-  line-height: 1.05;
-  letter-spacing: -0.035em;
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  /* Smaller name size matching standard ratio */
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #ffffff;
 }
 
-.arrival-subtitle {
-  max-width: 820px;
-  margin: 16px 0 0;
+.arrival-hero p:not(.arrival-kicker) {
+  max-width: 780px;
+  margin: 14px 0 0;
   color: #b4f5e6;
-  /* Mint cyan accent */
-  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+  /* Soft neon cyan/teal accent */
+  font-size: clamp(1.08rem, 2.2vw, 1.4rem);
   font-weight: 700;
-  letter-spacing: 0.02em;
   line-height: 1.35;
 }
 
@@ -466,41 +471,25 @@ input {
 
 .about-slider-bar {
   width: 4px;
-  height: 3.2rem;
+  height: 3.5rem;
   background-color: var(--accent);
   border-radius: 2px;
-  transition: background-color 0.3s;
-}
-
-[data-theme="dark"] .about-slider-bar {
-  background-color: #00f0ff;
-  /* Sync with CV neon cyan theme in dark mode */
 }
 
 .about-slider-text {
-  display: inline-block;
-  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  font-size: clamp(2rem, 5vw, 3.8rem);
   font-weight: 800;
-  letter-spacing: 0.16em;
-  color: var(--accent);
-  /* Solid professional accent color */
-  text-shadow: 0 0 10px rgba(15, 118, 110, 0.12);
+  letter-spacing: 0.15em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent);
+  text-shadow: 2px 2px 0px rgba(15, 118, 110, 0.1);
   text-transform: uppercase;
-  transition: opacity 300ms ease, transform 300ms ease, color 0.3s;
-  line-height: 1.1;
-  transform: translateY(0);
-}
-
-.about-slider-text.slider-hidden {
-  opacity: 0;
-  transform: translateY(12px);
-  /* Smooth slide up transition */
+  transition: opacity 300ms ease;
+  line-height: 1;
 }
 
 [data-theme="dark"] .about-slider-text {
-  color: #00f0ff;
-  /* Eye-catching neon cyan in dark mode */
-  text-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+  text-shadow: 2px 2px 0px rgba(94, 234, 212, 0.15);
 }
 
 .home-hero-grid {
