@@ -1516,6 +1516,100 @@ input {
   color: var(--ink);
 }
 
+/* CV Section Styling */
+.container--cv-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.cv-display-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+}
+
+.cv-badge-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cv-badge-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 2px var(--accent), var(--shadow);
+}
+
+.cv-badge-text {
+  color: #00f0ff;
+  /* Neon cyan */
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 6px rgba(0, 240, 255, 0.8), 0 0 12px rgba(0, 240, 255, 0.4);
+  animation: cv-pulse 4s ease-in-out infinite;
+  display: inline-block;
+}
+
+.cv-badge-arrow {
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 26px;
+  height: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f766e' stroke='white' stroke-width='2'%3E%3Cpath d='M4.5 3v13.5l4-4 2.5 5.5h2l-2.5-5.5 5.5-0.5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+.view-online-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #a3c9f7;
+  /* Soft blue */
+  color: #061c33;
+  /* Dark slate text */
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 11px 26px;
+  border-radius: 6px;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+.view-online-btn:hover {
+  background-color: #b8d7fb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+@keyframes cv-pulse {
+
+  0%,
+  80%,
+  100% {
+    transform: scale(1);
+  }
+
+  90% {
+    transform: scale(1.15);
+    /* Soft, subtle eye-catching pulse */
+  }
+}
+
 @media (max-width: 900px) {
   .research-grid {
     grid-template-columns: 1fr;

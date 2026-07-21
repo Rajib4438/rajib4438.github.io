@@ -562,6 +562,28 @@ function renderHome() {
           ${linkButton("View all publications", "publications.html", "primary", "book")}
         </div>
       </div>
+    <section class="section-band alt" id="home-cv-section">
+      <div class="container container--cv-section">
+        <div class="cv-display-row reveal">
+          <div class="cv-badge-wrapper">
+            <div class="cv-badge-circle">
+              <span class="cv-badge-text">CV</span>
+            </div>
+            <div class="cv-badge-arrow"></div>
+          </div>
+          
+          <a class="view-online-btn" href="assets/${escapeHtml(profile.cv)}" target="_blank" rel="noopener noreferrer">
+            View Online
+          </a>
+          
+          <div class="cv-badge-wrapper">
+            <div class="cv-badge-circle">
+              <span class="cv-badge-text">CV</span>
+            </div>
+            <div class="cv-badge-arrow"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
   `;
