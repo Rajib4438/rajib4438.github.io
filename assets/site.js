@@ -56,14 +56,16 @@ const education = [
     institution: "Rajbari Government College",
     location: "Rajbari, Bangladesh",
     date: "2020",
-    meta: "GPA: 4.50/5.00"
+    meta: "GPA: 4.50/5.00",
+    division: "Science"
   },
   {
     degree: "Secondary School Certificate (SSC)",
     institution: "Goalanda Nazir Uddin Pilot Government High School",
     location: "Goalanda, Rajbari, Bangladesh",
     date: "2018",
-    meta: "GPA: 4.11/5.00"
+    meta: "GPA: 4.11/5.00",
+    division: "Science"
   }
 ];
 
@@ -602,6 +604,7 @@ function renderEducation() {
                     ${item.date ? `<span class="timeline-date">${escapeHtml(item.date)}</span>` : ""}
                   </div>
                   <p><strong>${escapeHtml(item.meta)}</strong></p>
+                  ${item.division ? `<p><strong>Division:</strong> ${escapeHtml(item.division)}</p>` : ""}
                   ${item.thesis ? `<p><strong>Thesis:</strong> ${escapeHtml(item.thesis)}</p>` : ""}
                   ${item.advisor ? `<p><strong>Advisor:</strong> ${escapeHtml(item.advisor)}</p>` : ""}
                   ${item.details ? `<ul class="clean-list">${item.details.map((detail) => `<li>${escapeHtml(detail)}</li>`).join("")}</ul>` : ""}
