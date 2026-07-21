@@ -533,20 +533,58 @@ function renderHome() {
     </section>
 
     <section class="section-band alt">
-      <div class="container">
-        ${sectionHeading("Research Focus")}
-        <div class="quick-grid">
-          ${profile.interests
-      .map(
-        (interest, index) => `
-                <article class="info-card reveal">
-                  <div class="card-icon">${icon(index % 3 === 0 ? "book" : index % 3 === 1 ? "code" : "search")}</div>
-                  <h3>${escapeHtml(interest)}</h3>
-                  <p>${researchDescription(interest)}</p>
-                </article>
-              `
-      )
-      .join("")}
+      <div class="container container--research">
+        <div class="research-grid reveal">
+          <div class="research-image-col">
+            <svg viewBox="0 0 400 400" fill="none" class="research-vector-svg" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 50 0 L 50 400 M 150 0 L 150 400 M 250 0 L 250 400 M 350 0 L 350 400" stroke="var(--line)" stroke-width="0.5" opacity="0.3"/>
+              <path d="M 0 50 L 400 50 M 0 150 L 400 150 M 0 250 L 400 250 M 0 350 L 400 350" stroke="var(--line)" stroke-width="0.5" opacity="0.3"/>
+              <circle cx="200" cy="200" r="100" fill="url(#research-glow)" opacity="0.15" />
+              <g stroke="var(--accent)" stroke-width="1.5" opacity="0.8">
+                <line x1="120" y1="120" x2="200" y2="80" />
+                <line x1="200" y1="80" x2="280" y2="120" />
+                <line x1="280" y1="120" x2="280" y2="220" />
+                <line x1="280" y1="220" x2="200" y2="280" />
+                <line x1="200" y1="280" x2="120" y2="220" />
+                <line x1="120" y1="220" x2="120" y2="120" />
+                <line x1="120" y1="120" x2="200" y2="180" />
+                <line x1="200" y1="80" x2="200" y2="180" />
+                <line x1="280" y1="120" x2="200" y2="180" />
+                <line x1="280" y1="220" x2="200" y2="180" />
+                <line x1="200" y1="280" x2="200" y2="180" />
+                <line x1="120" y1="220" x2="200" y2="180" />
+              </g>
+              <circle cx="200" cy="180" r="120" stroke="var(--blue)" stroke-width="1" stroke-dasharray="4 8" opacity="0.5" />
+              <circle cx="200" cy="180" r="135" stroke="var(--accent)" stroke-width="1" opacity="0.2" />
+              <circle cx="200" cy="80" r="7" fill="var(--accent)" />
+              <circle cx="280" cy="120" r="5" fill="var(--blue)" />
+              <circle cx="280" cy="220" r="7" fill="var(--accent)" />
+              <circle cx="200" cy="280" r="5" fill="var(--blue)" />
+              <circle cx="120" cy="220" r="7" fill="var(--accent)" />
+              <circle cx="120" cy="120" r="5" fill="var(--blue)" />
+              <circle cx="200" cy="180" r="9" fill="var(--accent-strong)" />
+              <rect x="130" y="320" width="140" height="6" rx="3" fill="var(--line)" />
+              <rect x="160" y="336" width="80" height="6" rx="3" fill="var(--accent)" opacity="0.6" />
+              <defs>
+                <radialGradient id="research-glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                  <stop offset="0%" stop-color="var(--accent)" />
+                  <stop offset="100%" stop-color="var(--blue)" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="research-content-col">
+            <h2 class="research-title">Research Interests</h2>
+            <ul class="research-list">
+              <li>Natural Language Processing (NLP)</li>
+              <li>Machine Learning</li>
+              <li>Deep Learning</li>
+              <li>Artificial Intelligence</li>
+              <li>Large Language Models (LLMs)</li>
+              <li>Explainable AI (XAI)</li>
+              <li>Low-Resource Language Processing</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
