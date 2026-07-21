@@ -1521,14 +1521,21 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 0;
+  padding: 0;
+}
+
+#home-cv-section {
+  padding: 0 0 24px 0;
+  border-top: none;
+  background: transparent;
 }
 
 .cv-display-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: clamp(40px, 12vw, 160px);
+  /* wider gap, pushed to outer sides */
   width: 100%;
 }
 
@@ -1546,30 +1553,32 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 2px var(--accent), var(--shadow);
+  box-shadow: 0 0 0 2.5px #00a2b5, 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .cv-badge-text {
   color: #00f0ff;
   /* Neon cyan */
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: 0.05em;
-  text-shadow: 0 0 6px rgba(0, 240, 255, 0.8), 0 0 12px rgba(0, 240, 255, 0.4);
-  animation: cv-pulse 4s ease-in-out infinite;
+  text-shadow: 0 0 6px rgba(0, 240, 255, 0.85), 0 0 12px rgba(0, 240, 255, 0.45);
+  animation: cv-pulse 3s ease-in-out infinite;
+  /* 3 seconds interval */
   display: inline-block;
 }
 
 .cv-badge-arrow {
   position: absolute;
-  bottom: -3px;
-  right: -3px;
-  width: 26px;
-  height: 28px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230f766e' stroke='white' stroke-width='2'%3E%3Cpath d='M4.5 3v13.5l4-4 2.5 5.5h2l-2.5-5.5 5.5-0.5z'/%3E%3C/svg%3E");
+  bottom: -6px;
+  right: -6px;
+  width: 32px;
+  height: 32px;
+  /* Thick bold cartoon style vector cursor arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28' fill='%2300a2b5' stroke='white' stroke-width='3'%3E%3Cpath d='M2 2 L2 20 L8.5 13.5 L14.5 25.5 L18.5 23.5 L12.5 11.5 L19.5 11.5 Z' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .view-online-btn {
@@ -1599,14 +1608,16 @@ input {
 @keyframes cv-pulse {
 
   0%,
-  80%,
+  75%,
   100% {
     transform: scale(1);
+    text-shadow: 0 0 6px rgba(0, 240, 255, 0.85), 0 0 12px rgba(0, 240, 255, 0.45);
   }
 
-  90% {
-    transform: scale(1.15);
-    /* Soft, subtle eye-catching pulse */
+  87% {
+    transform: scale(1.22);
+    /* clearly visible scale up */
+    text-shadow: 0 0 12px rgba(0, 240, 255, 1), 0 0 24px rgba(0, 240, 255, 0.65);
   }
 }
 
