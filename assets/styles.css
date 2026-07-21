@@ -402,9 +402,7 @@ input {
 
 .arrival-hero-content {
   align-self: center;
-  padding: 88px 0;
-  padding-left: clamp(24px, 12vw, 120px);
-  /* Positioned between left and middle */
+  padding: 48px 0;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85), 0 4px 22px rgba(0, 0, 0, 0.7);
 }
 
@@ -418,22 +416,19 @@ input {
 }
 
 .arrival-hero h1 {
+  max-width: 920px;
   margin: 0;
-  font-size: clamp(2.4rem, 6vw, 3.8rem);
-  /* Smaller name size matching standard ratio */
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  color: #ffffff;
+  font-size: clamp(4rem, 11vw, 10rem);
+  line-height: 0.86;
+  letter-spacing: -0.065em;
 }
 
 .arrival-hero p:not(.arrival-kicker) {
-  max-width: 780px;
-  margin: 14px 0 0;
-  color: #b4f5e6;
-  /* Soft neon cyan/teal accent */
-  font-size: clamp(1.08rem, 2.2vw, 1.4rem);
-  font-weight: 700;
-  line-height: 1.35;
+  max-width: 600px;
+  margin: 28px 0 0;
+  color: rgba(248, 255, 253, 0.85);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 650;
 }
 
 .arrival-scroll {
