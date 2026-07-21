@@ -1037,7 +1037,6 @@ function renderFooter() {
         <p class="footer-email-header">Email:</p>
         <a class="footer-email-link" href="mailto:rajibkhan4438@gmail.com">rajibkhan4438@gmail.com</a>
         <a class="footer-email-link" href="mailto:22103057@iubat.edu">22103057@iubat.edu</a>
-        <div style="height: 12px;"></div>
         <a class="footer-email-link" href="mailto:k.rajib4438@gmail.com">k.rajib4438@gmail.com</a>
       </div>
     </div>
