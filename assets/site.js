@@ -572,7 +572,7 @@ function renderHome() {
             <div class="cv-badge-arrow"></div>
           </div>
           
-          <a class="view-online-btn" href="assets/${escapeHtml(profile.cv)}" target="_blank" rel="noopener noreferrer">
+          <a class="view-online-btn" href="${escapeHtml(profile.cv)}" target="_blank" rel="noopener noreferrer">
             View Online
           </a>
           
