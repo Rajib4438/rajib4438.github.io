@@ -466,41 +466,25 @@ input {
 
 .about-slider-bar {
   width: 4px;
-  height: 3.2rem;
+  height: 3.5rem;
   background-color: var(--accent);
   border-radius: 2px;
-  transition: background-color 0.3s;
-}
-
-[data-theme="dark"] .about-slider-bar {
-  background-color: #00f0ff;
-  /* Sync with CV neon cyan theme in dark mode */
 }
 
 .about-slider-text {
-  display: inline-block;
-  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  font-size: clamp(2rem, 5vw, 3.8rem);
   font-weight: 800;
-  letter-spacing: 0.16em;
-  color: var(--accent);
-  /* Solid professional accent color */
-  text-shadow: 0 0 10px rgba(15, 118, 110, 0.12);
+  letter-spacing: 0.15em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent);
+  text-shadow: 2px 2px 0px rgba(15, 118, 110, 0.1);
   text-transform: uppercase;
-  transition: opacity 300ms ease, transform 300ms ease, color 0.3s;
-  line-height: 1.1;
-  transform: translateY(0);
-}
-
-.about-slider-text.slider-hidden {
-  opacity: 0;
-  transform: translateY(12px);
-  /* Smooth slide up transition */
+  transition: opacity 300ms ease;
+  line-height: 1;
 }
 
 [data-theme="dark"] .about-slider-text {
-  color: #00f0ff;
-  /* Eye-catching neon cyan in dark mode */
-  text-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
+  text-shadow: 2px 2px 0px rgba(94, 234, 212, 0.15);
 }
 
 .home-hero-grid {

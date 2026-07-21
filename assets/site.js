@@ -1189,10 +1189,10 @@ function initAboutSlider() {
     clearInterval(aboutSliderInterval);
   }
   aboutSliderInterval = setInterval(() => {
-    container.classList.add("slider-hidden");
+    container.style.opacity = "0";
     setTimeout(() => {
       container.textContent = words[index];
-      container.classList.remove("slider-hidden");
+      container.style.opacity = "1";
       index = (index + 1) % words.length;
     }, 300);
   }, 2000);
