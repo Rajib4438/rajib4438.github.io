@@ -119,7 +119,8 @@ const publications = [
     title: "PROSHNO BINNASH: Contextual Multi-Label Question Answering Dataset for Low-Resource NLP",
     authors: "Khan, R., Aurpa, T. T., Rahman, M. S., and Ashrafuzzaman, M.",
     venue: "Data in Brief, Elsevier",
-    note: "Dataset publication centered on Bengali contextual question understanding."
+    note: "Dataset publication centered on Bengali contextual question understanding.",
+    link: "https://www.sciencedirect.com/science/article/pii/S2352340925009825"
   },
   {
     year: "2026",
@@ -129,7 +130,8 @@ const publications = [
     authors: "Khan, R., Rakib, A. B., Haque, O., Tabassum, M., Rahman, M. S., and Akter, M.",
     venue:
       "2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN)",
-    note: "Focuses on transformer-based aspect analysis and interpretability for local service reviews."
+    note: "Focuses on transformer-based aspect analysis and interpretability for local service reviews.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11545946"
   },
   {
     year: "2026",
@@ -139,7 +141,8 @@ const publications = [
     authors: "Islam, M. A., Khan, R., Rahman, M. S., Emu, S. A., and Anik, M. A. H.",
     venue:
       "2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN)",
-    note: "A hybrid model for Banglish aspect-based sentiment analysis."
+    note: "A hybrid model for Banglish aspect-based sentiment analysis.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11545881"
   },
   {
     year: "2026",
@@ -148,7 +151,8 @@ const publications = [
     authors: "Tabassum, M., Haque, O., Khan, R., Rahman, M. S., and Akter, M.",
     venue:
       "2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN)",
-    note: "Explores token reweighting for Bangla emotion detection."
+    note: "Explores token reweighting for Bangla emotion detection.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11546152"
   },
   {
     year: "2026",
@@ -158,7 +162,8 @@ const publications = [
     authors: "Akter, M., Haque, O., Tabassum, M., and Khan, R.",
     venue:
       "2026 IEEE 2nd International Conference on Quantum Photonics, Artificial Intelligence and Networking (QPAIN)",
-    note: "Uses stacked learning and SHAP analysis for interpretable severity prediction."
+    note: "Uses stacked learning and SHAP analysis for interpretable severity prediction.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11546473"
   },
   {
     year: "2025",
@@ -167,7 +172,8 @@ const publications = [
       "BanglaBERT-BiLSTM: A Novel Hybrid Architecture for Multiclass Mental Health Classification in Bengali Social Media Text",
     authors: "Haque, O., Hossain, A., Tabassum, M., Khan, R., and Tamim, F. S.",
     venue: "2025 28th International Conference on Computer and Information Technology (ICCIT)",
-    note: "Hybrid transformer and sequence modeling for Bengali mental health classification."
+    note: "Hybrid transformer and sequence modeling for Bengali mental health classification.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11490465"
   },
   {
     year: "2025",
@@ -176,7 +182,8 @@ const publications = [
     authors: "Aurpa, T. T., Jeba, S. M., Khan, R., Ahmed, M. S., and Dash, S. R.",
     venue:
       "2025 IEEE International Conference on Signal Processing, Information, Communication and Systems (SPICSCON)",
-    note: "Deep learning study of social sentiment around a major Bangladeshi infrastructure project."
+    note: "Deep learning study of social sentiment around a major Bangladeshi infrastructure project.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11504392"
   },
   {
     year: "2024",
@@ -185,7 +192,8 @@ const publications = [
     authors: "Jeba, S. M., Khan, R., Ahmed, M. S., Aurpa, T. T., and Dash, S. R.",
     venue:
       "2024 IEEE International Conference on Power, Electrical, Electronics and Communication (PEEIACON)",
-    note: "Public sentiment analysis using machine learning and deep learning methods."
+    note: "Public sentiment analysis using machine learning and deep learning methods.",
+    link: "https://ieeexplore.ieee.org/abstract/document/10800150"
   },
   {
     year: "2023",
@@ -193,7 +201,8 @@ const publications = [
     title: "Analysis of Public Sentiment on Dhaka Metro Rail with Transformer-Based Architectures",
     authors: "Jeba, S. M., Aurpa, T. T., Siyam, F. H., Khan, R., and Mansia, F. M.",
     venue: "2023 26th International Conference on Computer and Information Technology (ICCIT)",
-    note: "Transformer-based analysis of public response to Dhaka Metro Rail."
+    note: "Transformer-based analysis of public response to Dhaka Metro Rail.",
+    link: "https://ieeexplore.ieee.org/abstract/document/10441469"
   }
 ];
 
@@ -707,13 +716,21 @@ function publicationItem(pub) {
       <div class="publication-head">
         <div>
           <span class="pub-type">${escapeHtml(pub.type)} | ${escapeHtml(pub.year)}</span>
-          <h3>${escapeHtml(pub.title)}</h3>
+          <h3>${pub.link ? `<a class="publication-title-link" href="${escapeHtml(pub.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(pub.title)}</a>` : escapeHtml(pub.title)}</h3>
         </div>
         <span class="timeline-date">${escapeHtml(pub.year)}</span>
       </div>
       <p class="publication-meta">${escapeHtml(pub.authors)}</p>
       <p>${escapeHtml(pub.venue)}</p>
       <p>${escapeHtml(pub.note)}</p>
+      ${pub.link ? `
+        <div class="publication-links">
+          <a class="mini-link" href="${escapeHtml(pub.link)}" target="_blank" rel="noopener noreferrer">
+            ${icon("external-link")}
+            <span>View Paper</span>
+          </a>
+        </div>
+      ` : ""}
     </article>
   `;
 }
