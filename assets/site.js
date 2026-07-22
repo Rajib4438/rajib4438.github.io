@@ -288,18 +288,18 @@ const certificates = [
       "Our research on analyzing public sentiment regarding Bangladesh's Padma Bridge using YouTube comments earned us a Certificate of Appreciation at the 4th IEEE SPICSCON 2025. By leveraging deep learning architectures like BERT, ELECTRA, and XLNet, we evaluated public reactions following the bridge's opening, with the BERT model achieving a peak accuracy of 85.49%."
   },
   {
-    title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4532)",
+    title: "IEEE Certificate of Appreciation - QPAIN 2026 (PID 4532)",
     file: "assets/Certificate's/QPAIN_PID-4532.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4532.png",
     description:
-      "Certificate of Participation and Presentation for research on Aspect-Based Sentiment Analysis of Bangladeshi IT Service Reviews Using Transformer Architectures and Post-Hoc Interpretability presented at IEEE QPAIN 2026."
+      "Presented our Banglish Aspect-Based Sentiment Analysis research at IEEE QPAIN 2026 (CUET). Using a novel dataset, we developed a Multi-Task Learning framework with BanglishBERT and Multi-Kernel CNN that handles severe class imbalance, achieving 89.68% sentiment accuracy and a 70.30% aspect detection Macro-F1 score."
   },
   {
     title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4648)",
     file: "assets/Certificate's/QPAIN_PID-4648.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4648.png",
     description:
-      "Certificate of Participation and Presentation for research on BanglishBERT-CNN-MTL: A Hybrid Multi-Task Learning Framework for Aspect-Based Sentiment Analysis in Low-Resource Banglish Text presented at IEEE QPAIN 2026."
+      "Certificate of Participation and Presentation for research on Aspect-Based Sentiment Analysis of Bangladeshi IT Service Reviews Using Transformer Architectures and Post-Hoc Interpretability presented at IEEE QPAIN 2026."
   },
   {
     title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4671)",
