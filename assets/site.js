@@ -281,65 +281,67 @@ const awards = [
 
 const certificates = [
   {
-    title: "Conference Presentation Certificate",
-    issuer: "Academic conference participation",
+    title: "IEEE Certificate of Appreciation - SPICSCON 2025",
     file: "assets/Certificate's/Certificate_Presentation_PID-207.pdf",
     preview: "assets/certificate-previews/Certificate_Presentation_PID-207.png",
-    kind: "PDF"
+    description:
+      "Our research on analyzing public sentiment regarding Bangladesh's Padma Bridge using YouTube comments earned us a Certificate of Appreciation at the 4th IEEE SPICSCON 2025. By leveraging deep learning architectures like BERT, ELECTRA, and XLNet, we evaluated public reactions following the bridge's opening, with the BERT model achieving a peak accuracy of 85.49%."
   },
   {
-    title: "Database Certificate",
-    issuer: "Database coursework and training",
-    file: "assets/Certificate's/Database.pdf",
-    preview: "assets/certificate-previews/Database.png",
-    kind: "PDF"
-  },
-  {
-    title: "Introduction to Web Development",
-    issuer: "HTML, CSS, and JavaScript",
-    file: "assets/Certificate's/Introduction to Web Development with HTML CSS  JavaScript.pdf",
-    preview: "assets/certificate-previews/Introduction to Web Development with HTML CSS  JavaScript.png",
-    kind: "PDF"
-  },
-  {
-    title: "QPAIN Certificate - PID 4532",
-    issuer: "QPAIN conference participation",
+    title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4532)",
     file: "assets/Certificate's/QPAIN_PID-4532.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4532.png",
-    kind: "PDF"
+    description:
+      "Certificate of Participation and Presentation for research on Aspect-Based Sentiment Analysis of Bangladeshi IT Service Reviews Using Transformer Architectures and Post-Hoc Interpretability presented at IEEE QPAIN 2026."
   },
   {
-    title: "QPAIN Certificate - PID 4648",
-    issuer: "QPAIN conference participation",
+    title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4648)",
     file: "assets/Certificate's/QPAIN_PID-4648.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4648.png",
-    kind: "PDF"
+    description:
+      "Certificate of Participation and Presentation for research on BanglishBERT-CNN-MTL: A Hybrid Multi-Task Learning Framework for Aspect-Based Sentiment Analysis in Low-Resource Banglish Text presented at IEEE QPAIN 2026."
   },
   {
-    title: "QPAIN Certificate - PID 4671",
-    issuer: "QPAIN conference participation",
+    title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4671)",
     file: "assets/Certificate's/QPAIN_PID-4671.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4671.png",
-    kind: "PDF"
+    description:
+      "Certificate of Participation and Presentation for research on Emotion-Aware Token Reweighting for Aspect-Based Emotion Detection in Bangla Text presented at IEEE QPAIN 2026."
   },
   {
-    title: "QPAIN Certificate - PID 4696",
-    issuer: "QPAIN conference participation",
+    title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4696)",
     file: "assets/Certificate's/QPAIN_PID-4696.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4696.png",
-    kind: "PDF"
+    description:
+      "Certificate of Participation and Presentation for research on A Hybrid Stacking-Based Framework for Multiclass Road Accident Severity Prediction with Interpretable SHAP Analysis presented at IEEE QPAIN 2026."
+  },
+  {
+    title: "Database Management Systems Certificate",
+    file: "assets/Certificate's/Database.pdf",
+    preview: "assets/certificate-previews/Database.png",
+    description:
+      "Certificate of completion for Database Management Systems training covering relational database design, SQL querying, schema optimization, and database architecture."
+  },
+  {
+    title: "Introduction to Web Development with HTML, CSS & JavaScript",
+    file: "assets/Certificate's/Introduction to Web Development with HTML CSS  JavaScript.pdf",
+    preview: "assets/certificate-previews/Introduction to Web Development with HTML CSS  JavaScript.png",
+    description:
+      "Certificate of completion for foundational web application development covering HTML5 semantics, modern CSS layout techniques, dynamic JavaScript, and responsive design principles."
   },
   {
     title: "Technocrats V.1 Volunteer Recognition",
-    issuer: "IUBAT Innovation and Entrepreneurship Center - 2023",
     file: "assets/Certificate's/WhatsApp Image 2026-07-16 at 9.28.14 PM.jpeg",
-    kind: "Image"
+    preview: "assets/Certificate's/WhatsApp Image 2026-07-16 at 9.28.14 PM.jpeg",
+    description:
+      "Recognition for outstanding voluntary service and core organization of the Technocrats V.1 event conducted by the IUBAT Innovation and Entrepreneurship Center."
   },
   {
-    title: "Software Engineering Internship",
-    issuer: "TechStdio - October 2025 to January 2026",
+    title: "Software Engineering Internship Certificate",
     file: "assets/Certificate's/photo_2026-07-16_21-58-12.jpg",
-    kind: "Image"
+    preview: "assets/Certificate's/photo_2026-07-16_21-58-12.jpg",
+    description:
+      "Certificate of completion for the Software Engineering Internship at TechStdio, highlighting work on multi-vendor e-commerce platforms using ASP.NET Core and Angular."
   }
 ];
 
@@ -881,23 +883,26 @@ function renderAwards() {
       </div>
     </section>
     <section class="section-band alt">
-      <div class="container">
+      <div class="container container--certificates-single">
         ${sectionHeading("Certificates", "")}
-        <div class="certificate-grid">
+        <div class="certificate-single-list">
           ${certificates
       .map(
-        (certificate) => `
-                <a class="certificate-card reveal" href="${escapeHtml(certificate.file)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(certificate.title)}">
-                  <div class="certificate-preview${certificate.preview || certificate.kind === "Image" ? " certificate-preview--image" : ""}">
-                    ${certificate.preview || certificate.kind === "Image" ? `<img src="${escapeHtml(certificate.preview || certificate.file)}" alt="Preview of ${escapeHtml(certificate.title)}">` : `<span class="certificate-file-type">PDF</span>${icon("file-text")}`}
+        (cert) => `
+                <article class="certificate-single-card reveal">
+                  <h3 class="certificate-single-title">
+                    <a href="${escapeHtml(cert.file)}" target="_blank" rel="noopener noreferrer" title="Open certificate document">
+                      <span>${escapeHtml(cert.title)}</span>
+                      <span class="certificate-title-icon" aria-hidden="true">${icon("external-link")}</span>
+                    </a>
+                  </h3>
+                  <div class="certificate-single-frame">
+                    <a href="${escapeHtml(cert.file)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(cert.title)} certificate">
+                      <img src="${escapeHtml(cert.preview || cert.file)}" alt="${escapeHtml(cert.title)} certificate document" loading="lazy">
+                    </a>
                   </div>
-                  <div class="certificate-content">
-                    <p class="certificate-kind">${escapeHtml(certificate.kind)} certificate</p>
-                    <h3>${escapeHtml(certificate.title)}</h3>
-                    <p>${escapeHtml(certificate.issuer)}</p>
-                    <span class="certificate-open">Open certificate ${icon("external-link")}</span>
-                  </div>
-                </a>
+                  <p class="certificate-single-description">${escapeHtml(cert.description)}</p>
+                </article>
               `
       )
       .join("")}
