@@ -703,7 +703,6 @@ function renderPublications() {
         </div>
         <div class="contact-actions reveal">
           ${linkButton("Google Scholar Profile", profile.scholar, "primary", "scholar", 'target="_blank" rel="noreferrer"')}
-          ${linkButton("Download Full CV", profile.cv, "ghost", "download", "download")}
         </div>
       </div>
     </section>
@@ -973,6 +972,9 @@ function renderSkills() {
           </div>
         </aside>
       </div>
+      <div class="hero-actions reveal" style="margin-top: 32px; justify-content: center;">
+        ${linkButton("Download Full CV", profile.cv, "primary", "download", "download")}
+      </div>
     </section>
   `;
 }
@@ -1031,7 +1033,7 @@ function renderContact() {
                 <span class="button-icon">${icon("copy")}</span>
                 <span>Copy Email</span>
               </button>
-              ${linkButton("Download CV", profile.cv, "ghost", "download", "download")}
+              ${linkButton("Download Full CV", profile.cv, "ghost", "download", "download")}
             </div>
           </div>
           <a class="cv-preview" href="${profile.cv}" target="_blank" rel="noreferrer" aria-label="Open Rajib Khan CV">
