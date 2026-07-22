@@ -288,7 +288,7 @@ const certificates = [
       "Our research on analyzing public sentiment regarding Bangladesh's Padma Bridge using YouTube comments earned us a Certificate of Appreciation at the 4th IEEE SPICSCON 2025. By leveraging deep learning architectures like BERT, ELECTRA, and XLNet, we evaluated public reactions following the bridge's opening, with the BERT model achieving a peak accuracy of 85.49%."
   },
   {
-    title: "IEEE Certificate of Appreciation - QPAIN 2026 (PID 4532)",
+    title: "IEEE Certificate of Appreciation - QPAIN 2026",
     file: "assets/Certificate's/QPAIN_PID-4532.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4532.png",
     description:
