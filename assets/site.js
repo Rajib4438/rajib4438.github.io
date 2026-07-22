@@ -295,11 +295,11 @@ const certificates = [
       "Presented our Banglish Aspect-Based Sentiment Analysis research at IEEE QPAIN 2026 (CUET). Using a novel dataset, we developed a Multi-Task Learning framework with BanglishBERT and Multi-Kernel CNN that handles severe class imbalance, achieving 89.68% sentiment accuracy and a 70.30% aspect detection Macro-F1 score."
   },
   {
-    title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4648)",
+    title: "IEEE Presentation Certificate - QPAIN 2026",
     file: "assets/Certificate's/QPAIN_PID-4648.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4648.png",
     description:
-      "Certificate of Participation and Presentation for research on Aspect-Based Sentiment Analysis of Bangladeshi IT Service Reviews Using Transformer Architectures and Post-Hoc Interpretability presented at IEEE QPAIN 2026."
+      "Presented our research on multiclass road traffic accident severity prediction at IEEE QPAIN 2026 (CUET). We developed a leakage-aware hybrid stacking model integrating RUSBoost, LightGBM, Decision Tree, and a Neural Network meta-learner with SHAP interpretability—achieving 81.9% accuracy and a 50.03% Macro F1-score."
   },
   {
     title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4671)",
