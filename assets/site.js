@@ -302,11 +302,11 @@ const certificates = [
       "Presented our research on multiclass road traffic accident severity prediction at IEEE QPAIN 2026 (CUET). We developed a leakage-aware hybrid stacking model integrating RUSBoost, LightGBM, Decision Tree, and a Neural Network meta-learner with SHAP interpretability—achieving 81.9% accuracy and a 50.03% Macro F1-score."
   },
   {
-    title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4671)",
+    title: "IEEE Presentation Certificate - QPAIN 2026",
     file: "assets/Certificate's/QPAIN_PID-4671.pdf",
     preview: "assets/certificate-previews/QPAIN_PID-4671.png",
     description:
-      "Certificate of Participation and Presentation for research on Emotion-Aware Token Reweighting for Aspect-Based Emotion Detection in Bangla Text presented at IEEE QPAIN 2026."
+      "Presented our research on Aspect-Based Emotion Detection (ABED) for Bangla text at IEEE QPAIN 2026 (CUET). Using a novel dataset, we introduced BanglaBERT + EATR-Net—an emotion-aware network with token-level reweighting that significantly enhances interpretability and performance, achieving an F1-Score of 0.8314 and ROC-AUC of 0.8777."
   },
   {
     title: "IEEE Presentation Certificate - QPAIN 2026 (PID 4696)",
