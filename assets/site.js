@@ -1074,7 +1074,7 @@ function renderFooter() {
       </div>
     </div>
     <!-- Developer attribution: Rajib Khan -->
-    <p class="developer-credit footer-credit-final">Developed by <a href="https://kawshik.dev/" target="_blank" rel="noreferrer">Kawshik</a></p>
+    <p class="developer-credit footer-credit-final">Developed by <a href="${escapeHtml(profile.github)}" target="_blank" rel="noreferrer">Rajib Khan</a></p>
   `;
 }
 
