@@ -10,7 +10,7 @@ const profile = {
   github: "https://github.com/Rajib4438",
   scholar: "https://scholar.google.com/citations?user=JC4pI4QAAAAJ&hl=en",
   orcid: "https://orcid.org/0009-0002-6688-8818",
-  cv: "Rajib_Khan_CV.pdf",
+  cv: "MY_CV.docx.pdf",
   summary:
     "I'm Rajib Khan, a Computer Science and Engineering graduate from the International University of Business Agriculture and Technology (IUBAT), with a strong interest in Software Engineering, Artificial Intelligence (AI), Machine Learning (ML), and Natural Language Processing (NLP).\n\nMy research focuses on Bangla NLP and AI applications. I have authored multiple research publications, including papers published in IEEE conferences and an international journal, contributing to language technologies, sentiment analysis, and intelligent systems.\n\nAlongside my research, I completed an industry internship and developed software, web-based, and data analysis projects that strengthened my programming, analytical, and problem-solving skills.\n\nI am passionate about learning emerging technologies, conducting impactful research, and building AI-driven solutions with real-world impact. My goal is to contribute to cutting-edge research and innovation in AI and NLP while pursuing advanced studies.",
   interests: [
@@ -578,11 +578,8 @@ function renderHome() {
             <div class="cv-badge-arrow"></div>
           </div>
           
-          <a class="view-online-btn" href="cv.html" target="_blank" rel="noopener noreferrer">
+          <a class="view-online-btn" href="${escapeHtml(profile.cv)}" target="_blank" rel="noopener noreferrer">
             View Online
-          </a>
-          <a class="view-online-btn" href="${escapeHtml(profile.cv)}" target="_blank" rel="noopener noreferrer" download>
-            Download CV
           </a>
           
           <div class="cv-badge-wrapper">
@@ -1037,10 +1034,9 @@ function renderContact() {
                 <span>Copy Email</span>
               </button>
               ${linkButton("Download Full CV", profile.cv, "ghost", "download", "download")}
-              ${linkButton("View Online CV", "cv.html", "ghost", "external-link")}
             </div>
           </div>
-          <a class="cv-preview" href="cv.html" target="_blank" rel="noreferrer" aria-label="Open Rajib Khan CV">
+          <a class="cv-preview" href="${profile.cv}" target="_blank" rel="noreferrer" aria-label="Open Rajib Khan CV">
             <img src="assets/cv-preview.png" alt="Preview of Rajib Khan CV">
           </a>
         </div>
