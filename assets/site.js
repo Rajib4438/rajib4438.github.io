@@ -99,6 +99,12 @@ const experiences = [
 
 const leadership = [
   {
+    role: "Associate Member",
+    organization: "United Nations Youth and Students Association of Bangladesh (UNYSAB)",
+    date: "Present",
+    details: ["Active participant in youth development, leadership, and social initiatives."]
+  },
+  {
     role: "General Member",
     organization: "IUBAT Innovation and Entrepreneurship Center",
     date: "2023 - 2024",
